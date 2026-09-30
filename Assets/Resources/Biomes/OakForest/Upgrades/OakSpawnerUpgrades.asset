@@ -13,9 +13,79 @@ MonoBehaviour:
   m_Name: OakSpawnerUpgrades
   m_EditorClassIdentifier: 
   _modifiers:
-  - Delay: 1
+  - Delay: 0.2
+    AddMaxCount: 0
+    TreePool:
+      _values:
+      - _value: {fileID: 11400000, guid: ffa2498025c67a24d80463630367e0ac, type: 2}
+        _weight: 3
+      - _value: {fileID: 11400000, guid: 7282727e0d17e134e92b6dc19e82b8fd, type: 2}
+        _weight: 1
+  - Delay: 0.4
+    AddMaxCount: 1
+    TreePool:
+      _values:
+      - _value: {fileID: 11400000, guid: ffa2498025c67a24d80463630367e0ac, type: 2}
+        _weight: 1
+      - _value: {fileID: 11400000, guid: 7282727e0d17e134e92b6dc19e82b8fd, type: 2}
+        _weight: 1
+  - Delay: 0.6
+    AddMaxCount: 1
+    TreePool:
+      _values:
+      - _value: {fileID: 11400000, guid: ffa2498025c67a24d80463630367e0ac, type: 2}
+        _weight: 1
+      - _value: {fileID: 11400000, guid: 7282727e0d17e134e92b6dc19e82b8fd, type: 2}
+        _weight: 3
+  - Delay: 0.9
     AddMaxCount: 1
     TreePool:
       _values:
       - _value: {fileID: 11400000, guid: 7282727e0d17e134e92b6dc19e82b8fd, type: 2}
+        _weight: 1
+  - Delay: 1.2
+    AddMaxCount: 2
+    TreePool:
+      _values:
+      - _value: {fileID: 11400000, guid: 7282727e0d17e134e92b6dc19e82b8fd, type: 2}
+        _weight: 7
+      - _value: {fileID: 11400000, guid: f35e4084df538f1498494b11df69a146, type: 2}
+        _weight: 1
+  - Delay: 1.5
+    AddMaxCount: 2
+    TreePool:
+      _values:
+      - _value: {fileID: 11400000, guid: 7282727e0d17e134e92b6dc19e82b8fd, type: 2}
+        _weight: 3
+      - _value: {fileID: 11400000, guid: f35e4084df538f1498494b11df69a146, type: 2}
+        _weight: 1
+  - Delay: 1.7
+    AddMaxCount: 2
+    TreePool:
+      _values:
+      - _value: {fileID: 11400000, guid: 7282727e0d17e134e92b6dc19e82b8fd, type: 2}
+        _weight: 1
+      - _value: {fileID: 11400000, guid: f35e4084df538f1498494b11df69a146, type: 2}
+        _weight: 1
+  - Delay: 2
+    AddMaxCount: 2
+    TreePool:
+      _values:
+      - _value: {fileID: 11400000, guid: 7282727e0d17e134e92b6dc19e82b8fd, type: 2}
+        _weight: 1
+      - _value: {fileID: 11400000, guid: f35e4084df538f1498494b11df69a146, type: 2}
+        _weight: 2
+  - Delay: 2.4
+    AddMaxCount: 2
+    TreePool:
+      _values:
+      - _value: {fileID: 11400000, guid: 7282727e0d17e134e92b6dc19e82b8fd, type: 2}
+        _weight: 1
+      - _value: {fileID: 11400000, guid: f35e4084df538f1498494b11df69a146, type: 2}
+        _weight: 4
+  - Delay: 2.7
+    AddMaxCount: 2
+    TreePool:
+      _values:
+      - _value: {fileID: 11400000, guid: f35e4084df538f1498494b11df69a146, type: 2}
         _weight: 1

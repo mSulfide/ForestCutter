@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class ActiveInGameLevel : MonoBehaviour, ILevelDepended
+public class ActiveInGameLevel : MonoBehaviour
 {
     [SerializeField] private EGameLevel _level;
 
-    public void OnLoad(EGameLevel level)
+    private void Start()
     {
-        gameObject.SetActive(level == _level);
+        gameObject.SetActive(Context.Game.State.Level == _level);
     }
 }

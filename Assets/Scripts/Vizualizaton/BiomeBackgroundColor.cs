@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class BiomeBackgroundColor : MonoBehaviour, ILevelDepended
+public class BiomeBackgroundColor : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
 
-    public void OnLoad(EGameLevel level)
+    private void Start()
     {
         if (Context.Exist() && Context.Game.IsPlaying())
         {
