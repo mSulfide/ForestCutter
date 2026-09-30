@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -15,5 +16,7 @@ public class GameStorage
         return GetResource<T>();
     }
 
-    public T GetResource<T>() where T : ScriptableObject => Resources.LoadAll<T>("Player").Concat(Resources.LoadAll<T>($"Biomes/{_state.Level}")).FirstOrDefault();
+    public T GetResource<T>() where T : ScriptableObject => GetResources<T>().FirstOrDefault();
+
+    public IEnumerable<T> GetResources<T>() where T : ScriptableObject => Resources.LoadAll<T>("Player").Concat(Resources.LoadAll<T>($"Biomes/{_state.Level}"));
 }

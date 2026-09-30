@@ -7,6 +7,8 @@ public abstract class Upgrader : MonoBehaviour
 
     public int Level => _level;
 
+    public abstract UpgradeList UpgradeList { get; }
+
     public abstract int MaxLevel { get; }
 
     public event Action OnLevelUp;
@@ -32,6 +34,8 @@ public abstract class Upgrader<T> : Upgrader
 
     private UpgradeList<T> Upgrades => _upgrades ??= Context.Game.Storage.GetUpgradeList<UpgradeList<T>>() ?? throw new InvalidOperationException($"{nameof(_upgrades)} can't be null");
 
+    public override UpgradeList UpgradeList => Upgrades;
+    
     public override int MaxLevel => Upgrades.Count - 1;
 
     public sealed override void InvokeUpgrade(int level)

@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: CritAttackUpgradeList
   m_EditorClassIdentifier: 
   _modifiers:
-  - CritMultiplayer: 0.05
-    CritChance: 3
-  - CritMultiplayer: 0.1
-    CritChance: 3
-  - CritMultiplayer: 0.15
-    CritChance: 3
-  - CritMultiplayer: 0.2
-    CritChance: 3
-  - CritMultiplayer: 0.25
-    CritChance: 3
+  - CritMultiplayer: 3
+    CritChance: 0.05
+  - CritMultiplayer: 3
+    CritChance: 0.1
+  - CritMultiplayer: 3
+    CritChance: 0.15
+  - CritMultiplayer: 3
+    CritChance: 0.2
+  - CritMultiplayer: 3
+    CritChance: 0.25

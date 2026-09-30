@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Biome", menuName = "ForestCutter/Biomes/" + nameof(BiomeSettings))]

@@ -1,13 +1,23 @@
 using System;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class UpgradeLot : MonoBehaviour
 {
-    [SerializeField] private List<Cost> _costs = new();
-    [SerializeField] private Upgrader _upgrader;
+    [SerializeField] private TextMeshProUGUI _text;
+
+    private PriceList _costs;
+    private Upgrader _upgrader;
 
     public event Action OnDeal;
+
+    public void Init(PriceList costs, Upgrader upgrader)
+    {
+        _costs = costs;
+        _upgrader = upgrader;
+
+        _text.text = _costs.Message;
+    }
 
     public Cost GetCost(int level) => 0 <= level && level < Mathf.Min(_costs.Count, _upgrader.MaxLevel + 1) ? _costs[level] : null;
 
@@ -24,6 +34,8 @@ public class UpgradeLot : MonoBehaviour
             OnDeal?.Invoke();
         }
     }
+
+    public void PayLevelUp() => PayLevelUp(transform.parent.GetComponent<UpgradeShop>().Wallet);
 
     private bool IsEnoughMoney(Inventory wallet, Cost cost)
     {
