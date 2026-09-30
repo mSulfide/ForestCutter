@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585688b6f80c246458c3dffa7a79ecd2, type: 3}
+  m_Name: MediumTree
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 7072537399471072765, guid: d4c349b5e41c3594a90db85e3e877ce8, type: 3}
+  _health: 24
+  _drop:
+  - _itemType: {fileID: 11400000, guid: aa82c05b8019c4a409e82c7761577c2e, type: 2}
+    _count:
+      _values:
+      - _value: 2
+        _weight: 2
+      - _value: 3
+        _weight: 10
+      - _value: 4
+        _weight: 5
+  - _itemType: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
+    _count:
+      _values:
+      - _value: 0
+        _weight: 17
+      - _value: 1
+        _weight: 3

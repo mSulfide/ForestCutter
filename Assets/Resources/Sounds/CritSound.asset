@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee82711b714f3284dbb799cb7cf15df6, type: 3}
+  m_Name: CritSound
+  m_EditorClassIdentifier: 
+  _volume: 1
+  _pitch:
+    _a: 1.1
+    _b: 1.15
+  _clip: {fileID: 8300000, guid: 97356cd73c5a65b41a5322cc809ccca7, type: 3}

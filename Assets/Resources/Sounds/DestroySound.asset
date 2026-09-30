@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee82711b714f3284dbb799cb7cf15df6, type: 3}
+  m_Name: DestroySound
+  m_EditorClassIdentifier: 
+  _volume: 1
+  _pitch:
+    _a: 0.8
+    _b: 0.9
+  _clip: {fileID: 8300000, guid: 308b4e1c90f043f4b96a18ed4ac29f47, type: 3}
