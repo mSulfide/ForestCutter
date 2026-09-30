@@ -13,7 +13,7 @@ public class GlobalSaver : MonoBehaviour
     public void Save()
     {
         if (Context.Exist() && Context.Storage != null)
-            foreach (ISaver saver in FindObjectsOfType<MonoBehaviour>().OfType<ISaver>())
+            foreach (ISaver saver in FindObjectsByType<MonoBehaviour>().OfType<ISaver>())
             {
                 saver.Save();
             }

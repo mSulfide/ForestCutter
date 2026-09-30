@@ -14,6 +14,6 @@ public class TakeDamageEffect : MonoBehaviour, IAttackEventListener
 
     private void Start()
     {
-        _particlePlayer = FindObjectOfType<ParticlePlayer>();
+        _particlePlayer = Context.GetParticlePlayer();
     }
 }

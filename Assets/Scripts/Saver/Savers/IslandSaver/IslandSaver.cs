@@ -22,7 +22,7 @@ public class IslandSaver : MonoBehaviour, ISaver, IPathHierarchy
         PathProvider provider = new(this);
 
         SaveTrees(provider, _spawner.GetComponentsInChildren<Health>().Select(health => health.transform));
-        SaveDrop(provider, FindObjectsOfType<Drop>().Select(drop => drop.transform));
+        SaveDrop(provider, FindObjectsByType<Drop>().Select(drop => drop.transform));
     }
 
     public void Load()

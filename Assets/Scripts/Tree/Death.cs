@@ -59,7 +59,7 @@ public class Death : MonoBehaviour, IAttackEventListener
 
     private void Start()
     {
-        _audioPlayer = FindObjectOfType<AudioPlayer>();
+        _audioPlayer = Context.GetAudioPlayer();
     }
 
     private void OnEnable()

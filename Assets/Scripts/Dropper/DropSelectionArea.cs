@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,14 +10,14 @@ public class DropSelectionArea : MonoBehaviour
     [SerializeField] private float _pickupSpeed = 10f;
     [SerializeField] private Inventory _inventory;
 
-    [Space, SerializeField] private Sound _pickUpSound;
-
-    private AudioPlayer _audioPlayer;
     private Camera _mainCamera;
+
+    public event Action OnPickUp;
 
     private IEnumerator PickUp(Drop drop)
     {
-        _audioPlayer.Play(_pickUpSound);
+        OnPickUp?.Invoke();
+
         Vector3 endPoint = transform.position;
         if (drop.TryGetComponent(out Mover mover))
             yield return mover.MoveTo(endPoint, speed: _pickupSpeed);
@@ -29,7 +30,6 @@ public class DropSelectionArea : MonoBehaviour
 
     private void Start()
     {
-        _audioPlayer = FindObjectOfType<AudioPlayer>();
         _mainCamera = Camera.main;
     }
 

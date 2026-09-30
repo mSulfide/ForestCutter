@@ -19,6 +19,10 @@ public class Context : MonoBehaviour
 
     public static bool Exist() => Instance != null;
 
+    public static AudioPlayer GetAudioPlayer() => FindAnyObjectByType<AudioPlayer>();
+
+    public static ParticlePlayer GetParticlePlayer() => FindAnyObjectByType<ParticlePlayer>();
+
     private void Awake()
     {
         Initialize();
