@@ -6,4 +6,6 @@ public struct AttackInfo
     public Health Target;
     public Vector3 Position;
     public bool IsCrit;
+    public float Cooldown;
+    public float Force;
 }

@@ -9,8 +9,10 @@ public class Attacker : MonoBehaviour
     [SerializeField] private Upgradable<int> _baseDamage = new(1);
     [SerializeField] private Upgradable<float> _cooldown = new(1f);
     [SerializeField, Min(0f)] private float _autoAimRange = 0f;
+    [SerializeField] private AnimationCurve _damageByTime = AnimationCurve.Linear(0f, 0f, 1f, 1f);
 
     private Camera _mainCamera;
+    private float _lastAttackTimestamp;
     private readonly Upgradable<AttackInfo> _attack = new(default);
 
     public Upgradable<int> BaseDamage => _baseDamage;
@@ -55,12 +57,20 @@ public class Attacker : MonoBehaviour
 
         if (aim != null)
         {
+            float cooldown = _cooldown.GetValue();
+            float force = _damageByTime.Evaluate((Time.time - _lastAttackTimestamp) / cooldown);
+            int damage = Mathf.RoundToInt(_baseDamage.GetValue() * force);
+
             _attack.BaseValue = new()
             {
-                Damage = _baseDamage.GetValue(),
+                Damage = damage,
                 Target = aim,
-                Position = hit?.point ?? aim.transform.position
+                Position = hit?.point ?? aim.transform.position,
+                Cooldown = cooldown,
+                Force = force
             };
+
+            _lastAttackTimestamp = Time.time;
 
             AttackInfo info = _attack.GetValue();
 

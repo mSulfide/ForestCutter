@@ -8,10 +8,10 @@ public class TreePusher : MonoBehaviour, IAttackEventListener
 
     public void AttackHandler(AttackInfo info)
     {
-        StartCoroutine(Push(transform.position - info.Position));
+        StartCoroutine(Push(transform.position - info.Position, info.Force));
     }
 
-    private IEnumerator Push(Vector3 direction)
+    private IEnumerator Push(Vector3 direction, float force)
     {
         direction = new Vector3(direction.x, 0, direction.z);
 
@@ -25,7 +25,7 @@ public class TreePusher : MonoBehaviour, IAttackEventListener
 
         while (time < maxTime)
         {
-            transform.rotation = Quaternion.AngleAxis(_rotationByTime.Evaluate(time), axis);
+            transform.rotation = Quaternion.AngleAxis(force * _rotationByTime.Evaluate(time), axis);
 
             time += Time.deltaTime;
             yield return null;
