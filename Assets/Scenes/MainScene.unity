@@ -1652,6 +1652,7 @@ GameObject:
   - component: {fileID: 1518028784}
   - component: {fileID: 1518028783}
   - component: {fileID: 1518028786}
+  - component: {fileID: 1518028787}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1693,7 +1694,6 @@ MonoBehaviour:
     _baseValue: 2
   _cooldown:
     _baseValue: 0.8
-  _autoClickCooldown: 1.25
   _autoAimRange: 0.5
 --- !u!114 &1518028780
 MonoBehaviour:
@@ -1786,6 +1786,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUpEffect
   _sound: {fileID: 11400000, guid: 1a7328040deac534da30c471efcbbd0a, type: 2}
+--- !u!114 &1518028787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518028777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+  m_Actions: {fileID: -944628639613478452, guid: b7b0270062cf3294aabf17a36b5f7052, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1569732943
 GameObject:
   m_ObjectHideFlags: 0

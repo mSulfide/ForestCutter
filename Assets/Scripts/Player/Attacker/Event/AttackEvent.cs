@@ -11,11 +11,11 @@ public class AttackEvent : MonoBehaviour
 
     private void OnEnable()
     {
-        GetComponent<Attacker>().OnAttack += AttackHandler;
+        GetComponent<Attacker>().OnAttackAction += AttackHandler;
     }
 
     private void OnDisable()
     {
-        GetComponent<Attacker>().OnAttack -= AttackHandler;
+        GetComponent<Attacker>().OnAttackAction -= AttackHandler;
     }
 }

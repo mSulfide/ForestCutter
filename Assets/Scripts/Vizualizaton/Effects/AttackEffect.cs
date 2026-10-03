@@ -26,11 +26,11 @@ public class AttackEffect : MonoBehaviour
 
     private void OnEnable()
     {
-        _attacker.OnAttack += AttackHandler;
+        _attacker.OnAttackAction += AttackHandler;
     }
 
     private void OnDisable()
     {
-        _attacker.OnAttack -= AttackHandler;
+        _attacker.OnAttackAction -= AttackHandler;
     }
 }
