@@ -6,7 +6,7 @@ public class SpawnerUpgrader : Upgrader<SpawnerUpgradeInfo>
     [SerializeField] private TreeSpawner _spawner;
 
     private readonly IncrementUpgrade _addMaxCount = new(0);
-    private readonly CooldownUpgrade _delayUpgrade = new(3f);
+    private readonly CooldownUpgrade _delayUpgrade = new(0f);
     private readonly SetUpgrade<RandomValue<TreeSettings>> _poolUgrade = new(null);
 
     public override void Invoke(SpawnerUpgradeInfo upgrade)

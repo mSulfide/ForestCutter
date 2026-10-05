@@ -28,5 +28,11 @@ MonoBehaviour:
       Cost: 8
   - _items:
     - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
-      Cost: 10
+      Cost: 12
+  - _items:
+    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
+      Cost: 16
+  - _items:
+    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
+      Cost: 20
   _message: "\u041A\u0440\u0438\u0442 +1"

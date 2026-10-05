@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee82711b714f3284dbb799cb7cf15df6, type: 3}
   m_Name: PickUpSound
   m_EditorClassIdentifier: 
-  _volume: 1
+  _volume: 1.12
   _pitch:
     _a: 0.92
     _b: 1

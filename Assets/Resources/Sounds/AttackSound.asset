@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee82711b714f3284dbb799cb7cf15df6, type: 3}
   m_Name: AttackSound
   m_EditorClassIdentifier: 
-  _volume: 1
+  _volume: 0.9
   _pitch:
-    _a: 0.95
-    _b: 1.05
+    _a: 0.94
+    _b: 1.06
   _clip: {fileID: 8300000, guid: 5e10c21df8c678f418b9939381c0da53, type: 3}

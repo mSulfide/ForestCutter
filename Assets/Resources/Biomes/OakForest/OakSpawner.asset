@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8722cce7c5a2fc740bec7ef813cf0580, type: 3}
   m_Name: OakSpawner
   m_EditorClassIdentifier: 
-  _maxSpawnCount: 3
+  _maxSpawnCount: 2
   _delay: 5
   _treePool:
     _values:

@@ -14,12 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _modifiers:
   - CritMultiplayer: 3
+    CritChance: 0.01
+  - CritMultiplayer: 3
+    CritChance: 0.02
+  - CritMultiplayer: 3
+    CritChance: 0.03
+  - CritMultiplayer: 3
+    CritChance: 0.04
+  - CritMultiplayer: 3
     CritChance: 0.05
   - CritMultiplayer: 3
+    CritChance: 0.06
+  - CritMultiplayer: 3
+    CritChance: 0.07
+  - CritMultiplayer: 3
+    CritChance: 0.08
+  - CritMultiplayer: 3
+    CritChance: 0.09
+  - CritMultiplayer: 3
     CritChance: 0.1
-  - CritMultiplayer: 3
-    CritChance: 0.15
-  - CritMultiplayer: 3
-    CritChance: 0.2
-  - CritMultiplayer: 3
-    CritChance: 0.25

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6debb00ecdfcc438df6374bf10c466, type: 3}
   m_Name: AddDamageUpgradeList
   m_EditorClassIdentifier: 
-  _modifiers: 02000000060000000e0000001e0000003e0000007e000000
+  _modifiers: 02000000060000000a00000010000000200000002800000032000000

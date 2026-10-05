@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MediumTree
   m_EditorClassIdentifier: 
   _prefab: {fileID: 7072537399471072765, guid: d4c349b5e41c3594a90db85e3e877ce8, type: 3}
-  _health: 24
+  _health: 80
   _drop:
   - _itemType: {fileID: 11400000, guid: aa82c05b8019c4a409e82c7761577c2e, type: 2}
     _count:
@@ -23,7 +23,7 @@ MonoBehaviour:
       - _value: 3
         _weight: 10
       - _value: 4
-        _weight: 5
+        _weight: 1
   - _itemType: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
     _count:
       _values:
