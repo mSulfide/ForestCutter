@@ -2,11 +2,14 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 
-public class TreePusher : MonoBehaviour, IAttackEventListener
+[RequireComponent(typeof(Health))]
+public class TreePusher : MonoBehaviour
 {
     [SerializeField] private AnimationCurve _rotationByTime;
 
-    public void AttackHandler(AttackInfo info)
+    private Health _health;
+
+    private void AttackHandler(AttackInfo info)
     {
         StartCoroutine(Push(transform.position - info.Position, info.Force));
     }
@@ -32,5 +35,20 @@ public class TreePusher : MonoBehaviour, IAttackEventListener
         }
 
         transform.rotation = Quaternion.identity;
+    }
+
+    private void Awake()
+    {
+        _health = GetComponent<Health>();
+    }
+
+    private void OnEnable()
+    {
+        _health.OnAttacked += AttackHandler;
+    }
+
+    private void OnDisable()
+    {
+        _health.OnAttacked -= AttackHandler;
     }
 }

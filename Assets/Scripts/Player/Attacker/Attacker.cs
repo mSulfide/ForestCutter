@@ -76,7 +76,7 @@ public class Attacker : MonoBehaviour
 
             OnAttackAction?.Invoke(info);
 
-            aim.TakeDamage(info.Damage);
+            aim.TakeAttack(info);
         }
     }
 

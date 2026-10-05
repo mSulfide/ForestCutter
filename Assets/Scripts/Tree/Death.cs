@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Health))]
-public class Death : MonoBehaviour, IAttackEventListener
+public class Death : MonoBehaviour
 {
     [SerializeField] private Sound _deathSound;
     [SerializeField] private Dropper _dropper;
@@ -14,7 +14,7 @@ public class Death : MonoBehaviour, IAttackEventListener
     private Health _health;
     private Vector3 _direction = Vector3.zero;
 
-    public void AttackHandler(AttackInfo info)
+    private void AttackHandler(AttackInfo info)
     {
         _direction = transform.position - info.Position;
     }
@@ -64,11 +64,13 @@ public class Death : MonoBehaviour, IAttackEventListener
 
     private void OnEnable()
     {
+        _health.OnAttacked += AttackHandler;
         _health.OnPointsOver += DeathHandler;
     }
 
     private void OnDisable()
     {
+        _health.OnAttacked -= AttackHandler;
         _health.OnPointsOver -= DeathHandler;
     }
 }

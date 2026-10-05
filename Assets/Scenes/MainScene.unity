@@ -1739,7 +1739,6 @@ GameObject:
   - component: {fileID: 1518028780}
   - component: {fileID: 1518028781}
   - component: {fileID: 1518028782}
-  - component: {fileID: 1518028785}
   - component: {fileID: 1518028784}
   - component: {fileID: 1518028783}
   - component: {fileID: 1518028786}
@@ -1876,18 +1875,6 @@ MonoBehaviour:
   _maxDistance: 50
   _pickupSpeed: 13.35
   _inventory: {fileID: 1518028781}
---- !u!114 &1518028785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1518028777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7381e313b1f12c8468e74419d54e68da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1518028786
 MonoBehaviour:
   m_ObjectHideFlags: 0

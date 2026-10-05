@@ -6,9 +6,16 @@ public class Health : MonoBehaviour
     public int Current { get; private set; }
     public int Max { get; private set; }
 
+    public event Attacker.AttackAction OnAttacked;
     public event Action<int> OnChanged;
     public event Action OnPointsOver;
     public event Action OnRevive;
+
+    public virtual void TakeAttack(AttackInfo info)
+    {
+        OnAttacked?.Invoke(info);
+        TakeDamage(info.Damage);
+    }
 
     public void Heal(int amount)
     {
@@ -37,7 +44,6 @@ public class Health : MonoBehaviour
         if (newMax == Max)
             return;
 
-        int oldHP = Current;
         Max = newMax;
         if (IsAlive)
         {
