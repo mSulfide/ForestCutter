@@ -42,7 +42,6 @@ public class IslandSaver : MonoBehaviour, ISaver, IPathHierarchy
                 Name = drop.gameObject.name,
                 X = drop.position.x,
                 Z = drop.position.z,
-                YRotation = drop.eulerAngles.y,
                 Inventory = drop.TryGetComponent(out Inventory inventory) ? inventory.GetData() : null
             });
         Context.Storage.Save(provider.GetPath($"{EResource.Drop}"), data);
@@ -59,7 +58,7 @@ public class IslandSaver : MonoBehaviour, ISaver, IPathHierarchy
                 GameObject drop = Instantiate(item.DropPrefab).gameObject;
                 drop.name = item.name;
 
-                drop.transform.SetPositionAndRotation(new(dropData.X, 0f, dropData.Z), Quaternion.Euler(Vector3.up * dropData.YRotation));
+                drop.transform.position = new(dropData.X, 0f, dropData.Z);
                 (drop.TryGetComponent(out Inventory inventory) ? inventory : drop.AddComponent<Inventory>()).SetData(dropData.Inventory);
             }
     }

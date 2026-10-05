@@ -60,6 +60,12 @@ public class Drop : MonoBehaviour
         _mover = GetComponent<Mover>();
     }
 
+    private void Start()
+    {
+        if (TryGetComponent(out Animator animator))
+            animator.Play(0, 0, UnityEngine.Random.Range(0f, 1f));
+    }
+
     private void OnEnable()
     {
         SubscribeToMover();
