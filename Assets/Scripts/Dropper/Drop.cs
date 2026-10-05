@@ -5,8 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(SphereCollider), typeof(Mover))]
 public class Drop : MonoBehaviour
 {
-    [SerializeField] private Vector3 _rotationSpeed = Vector3.up * 90;
-
     private Mover _mover;
     private Action _unsubscribe;
 
@@ -21,7 +19,6 @@ public class Drop : MonoBehaviour
         void onEndMove() => IsMoving = false;
         _mover.OnStartMove += onStartMove;
         _mover.OnEndMove += onEndMove;
-        _mover.Rotate(_rotationSpeed);
 
         _mover.OnEndMove += TryFallDown;
 

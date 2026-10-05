@@ -26,6 +26,9 @@ public class Dropper : MonoBehaviour
         Drop drop = Instantiate(item.DropPrefab);
 
         drop.gameObject.name = item.name;
+        
+        if (drop.TryGetComponent(out Animator animator))
+            animator.Play(0, 0, Random.Range(0f, 1f));
 
         Inventory inventory = drop.TryGetComponent(out Inventory currentInventory) ? currentInventory : drop.gameObject.AddComponent<Inventory>();
         inventory.Add(item, count);
