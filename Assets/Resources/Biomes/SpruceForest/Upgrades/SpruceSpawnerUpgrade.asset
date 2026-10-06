@@ -9,7 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae6debb00ecdfcc438df6374bf10c466, type: 3}
-  m_Name: AddDamageUpgradeList
+  m_Script: {fileID: 11500000, guid: 26a053c7d778f6d409cf408f0d4a6daf, type: 3}
+  m_Name: SpruceSpawnerUpgrade
   m_EditorClassIdentifier: 
-  _modifiers: 02000000060000000a00000010000000200000002800000032000000
+  _modifiers:
+  - Delay: 1
+    AddMaxCount: 1
+    TreePool:
+      _values:
+      - _value: {fileID: 11400000, guid: f71cb6364230cee4fb3e2c3761a5ed0d, type: 2}
+        _weight: 1
