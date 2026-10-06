@@ -8,4 +8,10 @@ public struct AttackInfo
     public bool IsCrit;
     public float Cooldown;
     public float Force;
+    public float ArmorIgnore;
+
+    public override readonly string ToString()
+    {
+        return $"{{ Damage: {Damage}, Target: {Target?.Current}, Position: {Position}, IsCrit: {IsCrit}, Cooldown: {Cooldown}, Force: {Force}, ArmorIgnore: {ArmorIgnore} }}";
+    }
 }

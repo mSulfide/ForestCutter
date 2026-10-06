@@ -28,11 +28,11 @@ public abstract class Upgrader : MonoBehaviour
     }
 }
 
-public abstract class Upgrader<T> : Upgrader
+public abstract class Upgrader<T, TUpgradeList> : Upgrader where TUpgradeList : UpgradeList<T>
 {
     private UpgradeList<T> _upgrades;
 
-    private UpgradeList<T> Upgrades => _upgrades ??= Context.Game.Storage.GetUpgradeList<UpgradeList<T>>() ?? throw new InvalidOperationException($"{nameof(_upgrades)} can't be null");
+    private UpgradeList<T> Upgrades => _upgrades ??= Context.Game.Storage.GetUpgradeList<TUpgradeList>() ?? throw new InvalidOperationException($"{nameof(_upgrades)} can't be null");
 
     public override UpgradeList UpgradeList => Upgrades;
     
@@ -45,3 +45,5 @@ public abstract class Upgrader<T> : Upgrader
 
     public abstract void Invoke(T upgrade);
 }
+
+public abstract class Upgrader<T> : Upgrader<T, UpgradeList<T>> { }

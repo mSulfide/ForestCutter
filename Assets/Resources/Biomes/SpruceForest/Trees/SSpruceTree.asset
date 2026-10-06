@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SSpruceTree
   m_EditorClassIdentifier: 
   _prefab: {fileID: 7648685729901784034, guid: f9081736aafa5304787930ad1b1470c6, type: 3}
-  _health: 200
+  _health: 50
   _drop:
   - _itemType: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
     _count:

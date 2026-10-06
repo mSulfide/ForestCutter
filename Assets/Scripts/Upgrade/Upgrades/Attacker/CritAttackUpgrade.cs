@@ -23,9 +23,11 @@ public class CritAttackUpgrade : Upgrade<AttackInfo>
 
     public override AttackInfo Modificate(AttackInfo value)
     {
+        const float critArmorIgnore = 0.05f;
         if (_chance > Random.Range(0f, 1f))
         {
             value.IsCrit = true;
+            value.ArmorIgnore += critArmorIgnore;
             value.Damage = Mathf.RoundToInt(value.Damage * _multiplier);
         }
         return value;

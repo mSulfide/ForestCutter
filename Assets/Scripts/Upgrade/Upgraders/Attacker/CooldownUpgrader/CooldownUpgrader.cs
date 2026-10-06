@@ -1,4 +1,4 @@
-public class CooldownUpgrader : AttackerUpgrader<float>
+public class CooldownUpgrader : AttackerUpgrader<float, CooldownUpgradeList>
 {
     private readonly CooldownUpgrade _cooldown = new(0f);
 

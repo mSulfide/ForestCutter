@@ -9,7 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae6debb00ecdfcc438df6374bf10c466, type: 3}
-  m_Name: AddDamageUpgrade
-  m_EditorClassIdentifier: 
-  _modifiers: 02000000060000000a000000100000002000000028000000320000003c00000046000000500000005a000000
+  m_Script: {fileID: 11500000, guid: 9b531cef15a497a44b8c89da7be3c909, type: 3}
+  m_Name: ArmorIgnoreUpgrade
+  m_EditorClassIdentifier: Assembly-CSharp::ArmorIgnoreUpgradeList
+  _modifiers:
+  - 0.05
+  - 0.05
+  - 0.075
+  - 0.1
+  - 0.125

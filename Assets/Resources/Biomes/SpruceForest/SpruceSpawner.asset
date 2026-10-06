@@ -12,11 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8722cce7c5a2fc740bec7ef813cf0580, type: 3}
   m_Name: SpruceSpawner
   m_EditorClassIdentifier: 
-  _maxSpawnCount: 3
+  _maxSpawnCount: 2
   _delay: 5
   _treePool:
     _values:
     - _value: {fileID: 11400000, guid: 50b49367d03367f488aaa27707050ce8, type: 2}
-      _weight: 5
-    - _value: {fileID: 11400000, guid: f71cb6364230cee4fb3e2c3761a5ed0d, type: 2}
       _weight: 1

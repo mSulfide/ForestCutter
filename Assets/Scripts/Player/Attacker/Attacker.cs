@@ -74,6 +74,9 @@ public class Attacker : MonoBehaviour
 
             AttackInfo info = _attack.GetValue();
 
+            foreach (var modifire in info.Target.GetComponents<IAttackModifire>())
+                info = modifire.Modificate(info);
+
             OnAttackAction?.Invoke(info);
 
             aim.TakeAttack(info);

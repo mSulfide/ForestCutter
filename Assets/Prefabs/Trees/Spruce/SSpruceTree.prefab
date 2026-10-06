@@ -93,12 +93,14 @@ GameObject:
   - component: {fileID: 3177278108682019264}
   - component: {fileID: 6589622812516818101}
   - component: {fileID: 5496803870668028503}
-  - component: {fileID: 8953329720370013048}
+  - component: {fileID: -4966985240444487741}
+  - component: {fileID: -8722944895631884020}
   - component: {fileID: 3158599614657406194}
   - component: {fileID: 3134668602447491991}
   - component: {fileID: 6840282104672505806}
   - component: {fileID: 1980209759459129851}
   - component: {fileID: 8038913501701918268}
+  - component: {fileID: 5568051959337083504}
   m_Layer: 0
   m_Name: SSpruceTree
   m_TagString: Untagged
@@ -220,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _particle: {fileID: 8529808514953580878, guid: 39946e6890fa13a46bfa8c192bf1c629, type: 3}
---- !u!114 &8953329720370013048
+--- !u!114 &-4966985240444487741
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -231,7 +233,21 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e08ee0fb167560488643f9638eaa8cc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+--- !u!114 &-8722944895631884020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7648685729901784034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c2ec16bb8de5d4db79286c0943df1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArmoredHealth
+  _armor: 0.95
+  _damageThreshold: 46
 --- !u!114 &3158599614657406194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,6 +354,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70da21d66567bd340a640f964ec2221d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5568051959337083504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7648685729901784034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfaa13713c317e84eb63b3ced0b62340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MyDebug
 --- !u!1001 &1064835843773738567
 PrefabInstance:
   m_ObjectHideFlags: 0
