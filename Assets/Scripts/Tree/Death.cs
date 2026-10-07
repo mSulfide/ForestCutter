@@ -21,9 +21,6 @@ public class Death : MonoBehaviour
 
     private IEnumerator OnDeath()
     {
-        if (TryGetComponent(out Collider collider))
-            collider.enabled = false;
-
         if (_rotation.length > 0)
         {
             float maxTime = _rotation.keys.Max(keyframe => keyframe.time);

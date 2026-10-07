@@ -9,9 +9,10 @@ public struct AttackInfo
     public float Cooldown;
     public float Force;
     public float ArmorIgnore;
+    public CascadeInfo Cascade;
 
     public override readonly string ToString()
     {
-        return $"{{ Damage: {Damage}, Target: {Target?.Current}, Position: {Position}, IsCrit: {IsCrit}, Cooldown: {Cooldown}, Force: {Force}, ArmorIgnore: {ArmorIgnore} }}";
+        return $"{{ Damage: {Damage}, Target: {Target?.Current}, Position: {Position}, IsCrit: {IsCrit}, Cooldown: {Cooldown}, Force: {Force}, ArmorIgnore: {ArmorIgnore}, Cascade: {Cascade} }}";
     }
 }

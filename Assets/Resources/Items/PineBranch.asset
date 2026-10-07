@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8722cce7c5a2fc740bec7ef813cf0580, type: 3}
-  m_Name: SpruceSpawner
+  m_Script: {fileID: 11500000, guid: 4a347df917319884ea714b77f580d9f8, type: 3}
+  m_Name: PineBranch
   m_EditorClassIdentifier: 
-  _maxSpawnCount: 2
-  _delay: 7
-  _treePool:
-    _values:
-    - _value: {fileID: 11400000, guid: 50b49367d03367f488aaa27707050ce8, type: 2}
-      _weight: 1
+  _icon: {fileID: 21300000, guid: ebee595b9ce279346a4b867937a16c12, type: 3}
+  _dropPrefab: {fileID: 8719928006971903088, guid: e30e8a890c3785d4782b33477c4a8056, type: 3}

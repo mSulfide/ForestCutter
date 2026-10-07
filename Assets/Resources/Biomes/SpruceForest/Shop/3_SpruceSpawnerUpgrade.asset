@@ -12,6 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9668feb0339534f80738a5f382acea, type: 3}
   m_Name: 3_SpruceSpawnerUpgrade
   m_EditorClassIdentifier: Assembly-CSharp::PriceList
-  _current: {fileID: 0}
-  _costs: []
-  _message: 
+  _current: {fileID: 11400000, guid: bae999b4ee41249498d7309f7b0b1a7f, type: 2}
+  _costs:
+  - _items:
+    - Item: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
+      Cost: 5
+  - _items:
+    - Item: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
+      Cost: 10
+  - _items:
+    - Item: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
+      Cost: 10
+  - _items:
+    - Item: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
+      Cost: 10
+  - _items:
+    - Item: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
+      Cost: 10
+  _message: "\u0421\u043E\u0441\u043D\u044B +1"

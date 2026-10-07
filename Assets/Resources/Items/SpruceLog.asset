@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a347df917319884ea714b77f580d9f8, type: 3}
   m_Name: SpruceLog
   m_EditorClassIdentifier: 
-  _icon: {fileID: 21300000, guid: 6380705d6a07570479119811f724fe85, type: 3}
+  _icon: {fileID: 21300000, guid: e13f61ee73f9aa14395d2def54662294, type: 3}
   _dropPrefab: {fileID: 8719928006971903088, guid: 5d5c3be62b90e7c4190064cff0e68fae, type: 3}

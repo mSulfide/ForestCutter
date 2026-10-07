@@ -93,7 +93,10 @@ GameObject:
   - component: {fileID: 3177278108682019264}
   - component: {fileID: 6589622812516818101}
   - component: {fileID: 5496803870668028503}
+  - component: {fileID: 6169576784011876888}
+  - component: {fileID: 2565038074876967527}
   - component: {fileID: 8953329720370013048}
+  - component: {fileID: -7306750849877728989}
   - component: {fileID: 3158599614657406194}
   - component: {fileID: 3134668602447491991}
   - component: {fileID: 6840282104672505806}
@@ -220,6 +223,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _particle: {fileID: 8529808514953580878, guid: 39946e6890fa13a46bfa8c192bf1c629, type: 3}
+--- !u!114 &6169576784011876888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7648685729901784034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfaa13713c317e84eb63b3ced0b62340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MyDebug
+--- !u!114 &2565038074876967527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7648685729901784034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c2ec16bb8de5d4db79286c0943df1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Armor
+  _armor: 0.97
+  _damageThreshold: 65
 --- !u!114 &8953329720370013048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,6 +261,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e08ee0fb167560488643f9638eaa8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-7306750849877728989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7648685729901784034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 730d73e258e1bc844acc27e5786d25d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TreeCascade
 --- !u!114 &3158599614657406194
 MonoBehaviour:
   m_ObjectHideFlags: 0

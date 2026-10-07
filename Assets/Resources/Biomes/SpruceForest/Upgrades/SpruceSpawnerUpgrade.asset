@@ -13,9 +13,47 @@ MonoBehaviour:
   m_Name: SpruceSpawnerUpgrade
   m_EditorClassIdentifier: 
   _modifiers:
-  - Delay: 1
+  - Delay: 0.8
+    AddMaxCount: 0
+    TreePool:
+      _values:
+      - _value: {fileID: 11400000, guid: 50b49367d03367f488aaa27707050ce8, type: 2}
+        _weight: 1
+  - Delay: 1.2
     AddMaxCount: 1
     TreePool:
       _values:
+      - _value: {fileID: 11400000, guid: 50b49367d03367f488aaa27707050ce8, type: 2}
+        _weight: 9
       - _value: {fileID: 11400000, guid: f71cb6364230cee4fb3e2c3761a5ed0d, type: 2}
         _weight: 1
+  - Delay: 1.5
+    AddMaxCount: 1
+    TreePool:
+      _values:
+      - _value: {fileID: 11400000, guid: 50b49367d03367f488aaa27707050ce8, type: 2}
+        _weight: 6
+      - _value: {fileID: 11400000, guid: f71cb6364230cee4fb3e2c3761a5ed0d, type: 2}
+        _weight: 1
+  - Delay: 1.8
+    AddMaxCount: 2
+    TreePool:
+      _values:
+      - _value: {fileID: 11400000, guid: 50b49367d03367f488aaa27707050ce8, type: 2}
+        _weight: 3
+      - _value: {fileID: 11400000, guid: f71cb6364230cee4fb3e2c3761a5ed0d, type: 2}
+        _weight: 2
+  - Delay: 2
+    AddMaxCount: 2
+    TreePool:
+      _values:
+      - _value: {fileID: 11400000, guid: 50b49367d03367f488aaa27707050ce8, type: 2}
+        _weight: 1
+      - _value: {fileID: 11400000, guid: f71cb6364230cee4fb3e2c3761a5ed0d, type: 2}
+        _weight: 3
+  - Delay: 6
+    AddMaxCount: 5
+    TreePool:
+      _values:
+      - _value: {fileID: 11400000, guid: f71cb6364230cee4fb3e2c3761a5ed0d, type: 2}
+        _weight: 3

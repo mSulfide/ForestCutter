@@ -939,6 +939,7 @@ MonoBehaviour:
   - {fileID: 1004974764}
   - {fileID: 1742864573}
   - {fileID: 448356733}
+  - {fileID: 975790370}
   _saveParent: {fileID: 744190469}
 --- !u!114 &744190469
 MonoBehaviour:
@@ -1455,6 +1456,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attacker: {fileID: 1518028779}
+--- !u!1 &975790368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 975790369}
+  - component: {fileID: 975790370}
+  m_Layer: 0
+  m_Name: TreeCascadeUpgrader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &975790369
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975790368}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1518028778}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &975790370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975790368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d544cfc33dc522844aa10fc8998a3775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TreeCascadeUpgrader
+  _attacker: {fileID: 1518028779}
 --- !u!1 &1004974762
 GameObject:
   m_ObjectHideFlags: 0
@@ -1812,6 +1858,7 @@ Transform:
   - {fileID: 958140836}
   - {fileID: 1004974763}
   - {fileID: 448356732}
+  - {fileID: 975790369}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1518028779
@@ -2237,6 +2284,7 @@ MonoBehaviour:
   - {fileID: 1004974764}
   - {fileID: 1742864573}
   - {fileID: 448356733}
+  - {fileID: 975790370}
 --- !u!1 &1742864571
 GameObject:
   m_ObjectHideFlags: 0

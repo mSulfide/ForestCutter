@@ -38,12 +38,12 @@ public class Attacker : MonoBehaviour
     private void AttackByRay(Ray ray)
     {
         RaycastHit? hit = Physics.Raycast(ray, out RaycastHit hitInfo) ? hitInfo : null;
-        Health aim = (hit.HasValue && hit.Value.collider.TryGetComponent(out Health health)) ? health : null;
+        Health aim = (hit.HasValue && hit.Value.collider.TryGetComponent(out Health health) && health.IsAlive) ? health : null;
 
         if (aim == null && _autoAimRange >= 0f)
         {
             float min = float.MaxValue;
-            foreach (RaycastHit sphereHit in Physics.SphereCastAll(ray, _autoAimRange).Where(hitInfo => hitInfo.collider.TryGetComponent(out Health health)))
+            foreach (RaycastHit sphereHit in Physics.SphereCastAll(ray, _autoAimRange).Where(hitInfo => hitInfo.collider.TryGetComponent(out Health health) && health.IsAlive))
             {
                 float sqrDistance = GetSqrDistance(ray, sphereHit.point);
                 if (sqrDistance < min)
