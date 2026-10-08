@@ -4,14 +4,21 @@ using UnityEngine;
 public class TakeDamageEffect : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _particle;
+    [SerializeField] private Sound _takeDamage;
 
     private ParticlePlayer _particlePlayer;
+    private AudioPlayer _audioPlayer;
     private Health _health;
 
     public void AttackHandler(AttackInfo info)
     {
-        Transform particle = _particlePlayer.Play(_particle).transform;
-        particle.SetPositionAndRotation(info.Position, Quaternion.LookRotation(Vector3.up, info.Position - info.Target.transform.position));
+        if (info.Damage > 0)
+        {
+            Transform particle = _particlePlayer.Play(_particle).transform;
+            particle.SetPositionAndRotation(info.Position, Quaternion.LookRotation(Vector3.up, info.Position - info.Target.transform.position));
+
+            _audioPlayer.Play(_takeDamage);
+        }
     }
 
     private void Awake()
@@ -22,6 +29,7 @@ public class TakeDamageEffect : MonoBehaviour
     private void Start()
     {
         _particlePlayer = Context.GetParticlePlayer();
+        _audioPlayer = Context.GetAudioPlayer();
     }
 
     private void OnEnable()

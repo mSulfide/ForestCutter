@@ -8,7 +8,11 @@ public class AudioPlayer : MonoBehaviour
     private float _masterVolume = 0.2f;
     private readonly Queue<AudioSource> _sources = new();
 
-    public void Play(Sound sound) => Play(sound.Clip, sound.Pitch, sound.Volume);
+    public void Play(ISound sound)
+    {
+        if (sound != null)
+            Play(sound.Clip, sound.Pitch, sound.Volume);
+    }
 
     public void Play(AudioClip sound, float pitch = 1f, float volume = 1f)
     {

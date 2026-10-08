@@ -17,4 +17,19 @@ MonoBehaviour:
   - _items:
     - Item: {fileID: 11400000, guid: 39c18f9ba04821e4bba12913cb5dcc2b, type: 2}
       Cost: 1
+  - _items:
+    - Item: {fileID: 11400000, guid: 39c18f9ba04821e4bba12913cb5dcc2b, type: 2}
+      Cost: 1
+  - _items:
+    - Item: {fileID: 11400000, guid: 39c18f9ba04821e4bba12913cb5dcc2b, type: 2}
+      Cost: 1
+  - _items:
+    - Item: {fileID: 11400000, guid: 39c18f9ba04821e4bba12913cb5dcc2b, type: 2}
+      Cost: 1
+  - _items:
+    - Item: {fileID: 11400000, guid: 39c18f9ba04821e4bba12913cb5dcc2b, type: 2}
+      Cost: 1
+  - _items:
+    - Item: {fileID: 11400000, guid: 39c18f9ba04821e4bba12913cb5dcc2b, type: 2}
+      Cost: 1
   _message: "\u041A\u0430\u0441\u043A\u0430\u0434 +1"

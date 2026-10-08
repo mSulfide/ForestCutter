@@ -5,13 +5,17 @@ public class AttackEffect : MonoBehaviour
 {
     [SerializeField] private Sound _attackSound;
     [SerializeField] private Sound _critSound;
+    [SerializeField] private RandomSound _missSound;
 
     private AudioPlayer _audioPlayer;
     private Attacker _attacker;
 
     private void AttackHandler(AttackInfo info)
     {
-        _audioPlayer.Play(info.IsCrit ? _critSound : _attackSound);
+        if (info.Damage > 0)
+            _audioPlayer.Play(info.IsCrit ? _critSound : _attackSound);
+        else
+            _audioPlayer.Play(_missSound);
     }
 
     private void Awake()

@@ -1,8 +1,8 @@
 using RandMath;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Sound", menuName = "ForestCutter/" + nameof(Sound))]
-public class Sound : ScriptableObject
+[CreateAssetMenu(fileName = nameof(Sound), menuName = "ForestCutter/Sounds/" + nameof(Sound))]
+public class Sound : ScriptableObject, ISound
 {
     [SerializeField] private float _volume = 1f;
     [SerializeField] private Range _pitch;

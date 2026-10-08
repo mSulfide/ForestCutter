@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15840bcd1f8c7a44aa9a7eb3c853e310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deathSound: {fileID: 11400000, guid: 4fb7bdca33ba44242b964783741b85c9, type: 2}
+  _deathSound: {fileID: 11400000, guid: dcc380793cb46bd41816a093854f85cd, type: 2}
 --- !u!136 &6587957527592378439
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -268,6 +268,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _particle: {fileID: 8529808514953580878, guid: 39946e6890fa13a46bfa8c192bf1c629, type: 3}
+  _takeDamage: {fileID: 0}
+  _miss: {fileID: 11400000, guid: f69876549ad35f94694b4de17aa2eeee, type: 2}
 --- !u!114 &-8305131999088327100
 MonoBehaviour:
   m_ObjectHideFlags: 0
