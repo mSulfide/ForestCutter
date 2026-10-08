@@ -43,8 +43,8 @@ MonoBehaviour:
       Cost: 10
   - _items:
     - Item: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
-      Cost: 10
+      Cost: 20
   - _items:
     - Item: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
-      Cost: 10
+      Cost: 40
   _message: "\u0423\u0440\u043E\u043D +1"

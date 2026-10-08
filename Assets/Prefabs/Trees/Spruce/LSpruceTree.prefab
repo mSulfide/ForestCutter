@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 6589622812516818101}
   - component: {fileID: 5496803870668028503}
   - component: {fileID: 8953329720370013048}
+  - component: {fileID: -7858169295299324804}
   - component: {fileID: -6042783152953982241}
   - component: {fileID: 3158599614657406194}
   - component: {fileID: 3134668602447491991}
@@ -234,6 +235,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e08ee0fb167560488643f9638eaa8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-7858169295299324804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7648685729901784034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c2ec16bb8de5d4db79286c0943df1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Armor
+  _armor: 1
+  _damageThreshold: 150
 --- !u!114 &-6042783152953982241
 MonoBehaviour:
   m_ObjectHideFlags: 0

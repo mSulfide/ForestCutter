@@ -13,11 +13,15 @@ MonoBehaviour:
   m_Name: TreeCascadeUpgrade
   m_EditorClassIdentifier: Assembly-CSharp::TreeCascadeUpgradeList
   _modifiers:
+  - AddForce: 0.35
+    AddCount: 3
   - AddForce: 0.5
-    AddCount: 1
-  - AddForce: 0.75
-    AddCount: 1
+    AddCount: 3
+  - AddForce: 0.65
+    AddCount: 3
   - AddForce: 0.9
-    AddCount: 1
-  - AddForce: 1
-    AddCount: 10
+    AddCount: 3
+  - AddForce: 1.05
+    AddCount: 3
+  - AddForce: 1.2
+    AddCount: 3

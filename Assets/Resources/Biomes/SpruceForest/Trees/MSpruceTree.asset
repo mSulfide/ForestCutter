@@ -33,3 +33,10 @@ MonoBehaviour:
         _weight: 6
       - _value: 3
         _weight: 1
+  - _itemType: {fileID: 11400000, guid: 39c18f9ba04821e4bba12913cb5dcc2b, type: 2}
+    _count:
+      _values:
+      - _value: 0
+        _weight: 19
+      - _value: 1
+        _weight: 1
