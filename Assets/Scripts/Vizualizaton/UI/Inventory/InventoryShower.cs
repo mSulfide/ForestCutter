@@ -27,16 +27,14 @@ public class InventoryShower : MonoBehaviour
         }
     }
 
-    private void UpdateInventory()
+    private void UpdateInventory(Item item, int count)
     {
-        foreach (Item item in _inventory)
-            if (_counters.TryGetValue(item, out ItemCounter counter))
-                counter.SetValue(_inventory.CountOf(item));
-            else
-                AddCounter(item);
-        List<Item> items = new(_counters.Keys);
-        items.RemoveAll(item => _inventory.Contains(item));
-        foreach (Item item in items)
+        if (_counters.TryGetValue(item, out ItemCounter counter))
+            counter.SetValue(_inventory.CountOf(item));
+        else
+            AddCounter(item);
+
+        if (_inventory.CountOf(item) <= 0)
             RemoveCounter(item);
     }
 

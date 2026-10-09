@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee82711b714f3284dbb799cb7cf15df6, type: 3}
   m_Name: DestroySound
   m_EditorClassIdentifier: 
-  _volume: 0.8
+  _volume: 0.6
   _pitch:
     _a: 0.97
     _b: 1
-  _clip: {fileID: 8300000, guid: 63a6e192c95c0b1479dec4539992d389, type: 3}
+  _clip: {fileID: 8300000, guid: 308b4e1c90f043f4b96a18ed4ac29f47, type: 3}

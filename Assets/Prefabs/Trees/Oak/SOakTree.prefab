@@ -91,6 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6918368769208216406}
   - component: {fileID: -1924360229690907460}
+  - component: {fileID: 2528477912878156833}
   - component: {fileID: 668469390695353643}
   - component: {fileID: 4149860829936322088}
   - component: {fileID: 6262246370751292212}
@@ -170,6 +171,19 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2528477912878156833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7072537399471072765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d9306753f4c76647a270832c3d00311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StatAttackListener
+  _health: {fileID: 0}
 --- !u!114 &668469390695353643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,8 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _particle: {fileID: 8529808514953580878, guid: 39946e6890fa13a46bfa8c192bf1c629, type: 3}
-  _takeDamage: {fileID: 0}
-  _miss: {fileID: 11400000, guid: f69876549ad35f94694b4de17aa2eeee, type: 2}
+  _takeDamage: {fileID: 11400000, guid: b7a958504b2c94c4f9db36da9b4b20e0, type: 2}
 --- !u!114 &6262246370751292212
 MonoBehaviour:
   m_ObjectHideFlags: 0

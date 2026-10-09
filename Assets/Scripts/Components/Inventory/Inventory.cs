@@ -8,7 +8,7 @@ public class Inventory : MonoBehaviour, IEnumerable<Item>
 {
     private readonly Dictionary<Item, uint> _inventory = new();
 
-    public event Action OnChanged;
+    public event Action<Item, int> OnChanged;
 
     public void Add(Item type, uint count = 1)
     {
@@ -17,7 +17,7 @@ public class Inventory : MonoBehaviour, IEnumerable<Item>
         else
             _inventory.Add(type, count);
         if (count > 0)
-            OnChanged?.Invoke();
+            OnChanged?.Invoke(type, (int)count);
     }
 
     public void Remove(Item type, uint count = uint.MaxValue)
@@ -29,7 +29,7 @@ public class Inventory : MonoBehaviour, IEnumerable<Item>
             else
                 _inventory.Remove(type);
             if (count > 0)
-                OnChanged?.Invoke();
+                OnChanged?.Invoke(type, (int)-count);
         }
     }
 
@@ -38,7 +38,7 @@ public class Inventory : MonoBehaviour, IEnumerable<Item>
     public void Clear()
     {
         _inventory.Clear();
-        OnChanged?.Invoke();
+        //OnChanged?.Invoke();
     }
 
     public IEnumerator<Item> GetEnumerator()

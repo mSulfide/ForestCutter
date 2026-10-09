@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class Saves : IPathHierarchy
 {
@@ -15,7 +13,7 @@ public class Saves : IPathHierarchy
         }
     }
 
-    internal void DeleteSave(string text)
+    public void DeleteSave(string text)
     {
         PathProvider provider = new(this);
         Context.Storage.Delete(provider.GetPath(text), EFileType.Directory);

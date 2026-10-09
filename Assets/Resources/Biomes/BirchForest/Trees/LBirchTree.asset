@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585688b6f80c246458c3dffa7a79ecd2, type: 3}
+  m_Name: LBirchTree
+  m_EditorClassIdentifier: Assembly-CSharp::TreeSettings
+  _prefab: {fileID: 8059612314347504438, guid: 59ec978ad1b03f84f92bde507c402bf3, type: 3}
+  _health: 100
+  _drop:
+  - _itemType: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+    _count:
+      _values:
+      - _value: 4
+        _weight: 1
+      - _value: 5
+        _weight: 1
+  - _itemType: {fileID: 11400000, guid: 9b73be155f8e9d042a964dfd65c3f1b0, type: 2}
+    _count:
+      _values:
+      - _value: 1
+        _weight: 5
+      - _value: 2
+        _weight: 1

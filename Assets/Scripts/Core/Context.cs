@@ -6,6 +6,7 @@ public class Context : MonoBehaviour
     public static Context Instance { get; private set; }
 
     public static Game Game => Instance.GetComponent<Game>();
+    public static StatisticCollector Stats => Instance.GetComponent<StatisticCollector>();
 
     public static Storage Storage => Instance != null ? Instance._storage : null;
 

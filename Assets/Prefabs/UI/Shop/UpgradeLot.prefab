@@ -147,6 +147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8424541077736288258}
   - component: {fileID: 4682866831959825510}
+  - component: {fileID: 4797530562315811511}
   - component: {fileID: 1938105855388959295}
   - component: {fileID: 6944480450556854252}
   m_Layer: 5
@@ -185,6 +186,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6435920249501677436}
   m_CullTransparentMesh: 1
+--- !u!114 &4797530562315811511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435920249501677436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b93377ee4211364698ba498e7fc3beb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StatUpgradeListener
 --- !u!114 &1938105855388959295
 MonoBehaviour:
   m_ObjectHideFlags: 0

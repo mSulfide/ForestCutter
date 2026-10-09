@@ -28,6 +28,30 @@ public class Storage
         File.WriteAllText(path, json);
     }
 
+    public void Append(string fileName, object data, EPathOption option = EPathOption.LocalSave)
+    {
+        string path = GetPath(fileName, option: option);
+
+        if (!Directory.Exists(Path.GetDirectoryName(path)))
+            Directory.CreateDirectory(Path.GetDirectoryName(path));
+
+        string json = JsonConvert.SerializeObject(data);
+        File.AppendAllText(path, json);
+    }
+
+    public void Append(string fileName, IEnumerable<object> data, EPathOption option = EPathOption.LocalSave)
+    {
+        string path = GetPath(fileName, option: option);
+
+        if (!Directory.Exists(Path.GetDirectoryName(path)))
+            Directory.CreateDirectory(Path.GetDirectoryName(path));
+
+        List<string> json = new();
+        foreach(object item in data)
+            json.Add(JsonConvert.SerializeObject(item));
+        File.AppendAllLines(path, json);
+    }
+
     public T Load<T>(string fileName, T defaultValue = default, EPathOption option = EPathOption.LocalSave)
     {
         //Debug.Log($"Load: {fileName}");

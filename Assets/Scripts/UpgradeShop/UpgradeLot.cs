@@ -1,15 +1,16 @@
-using System;
 using TMPro;
 using UnityEngine;
 
 public class UpgradeLot : MonoBehaviour
 {
+    public delegate void DealAction(DealInfo info);
+
     [SerializeField] private TextMeshProUGUI _text;
 
     private PriceList _costs;
     private Upgrader _upgrader;
 
-    public event Action OnDeal;
+    public event DealAction OnDeal;
 
     public void Init(PriceList costs, Upgrader upgrader)
     {
@@ -31,7 +32,13 @@ public class UpgradeLot : MonoBehaviour
             foreach (ItemCostPair pair in cost)
                 wallet.Remove(pair.Item, pair.Cost);
             _upgrader.LevelUp();
-            OnDeal?.Invoke();
+
+            DealInfo info = new()
+            {
+                Cost = cost,
+                Level = _upgrader.Level
+            };
+            OnDeal?.Invoke(info);
         }
     }
 

@@ -28,6 +28,11 @@ public class UpgradeCostShower : MonoBehaviour
         }
     }
 
+    private void DealHandler(DealInfo info)
+    {
+        UpdateCost();
+    }
+
     private void Start()
     {
         UpdateCost();
@@ -35,11 +40,11 @@ public class UpgradeCostShower : MonoBehaviour
 
     private void OnEnable()
     {
-        _upgradeLot.OnDeal += UpdateCost;
+        _upgradeLot.OnDeal += DealHandler;
     }
 
     private void OnDisable()
     {
-        _upgradeLot.OnDeal -= UpdateCost;
+        _upgradeLot.OnDeal -= DealHandler;
     }
 }
