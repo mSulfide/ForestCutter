@@ -37,8 +37,8 @@ MonoBehaviour:
     _count:
       _values:
       - _value: 0
-        _weight: 5
+        _weight: 15
       - _value: 1
-        _weight: 3
-      - _value: 4
-        _weight: 2
+        _weight: 4
+      - _value: 2
+        _weight: 1

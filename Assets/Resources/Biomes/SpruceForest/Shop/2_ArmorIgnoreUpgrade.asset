@@ -24,33 +24,43 @@ MonoBehaviour:
       Cost: 1
   - _items:
     - Item: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
-      Cost: 10
-    - Item: {fileID: 11400000, guid: 408d006c38edea344b42839c8137496d, type: 2}
-      Cost: 2
-  - _items:
-    - Item: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
-      Cost: 10
-    - Item: {fileID: 11400000, guid: 408d006c38edea344b42839c8137496d, type: 2}
       Cost: 5
+    - Item: {fileID: 11400000, guid: 408d006c38edea344b42839c8137496d, type: 2}
+      Cost: 1
   - _items:
     - Item: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
-      Cost: 10
+      Cost: 5
     - Item: {fileID: 11400000, guid: 408d006c38edea344b42839c8137496d, type: 2}
-      Cost: 10
+      Cost: 1
   - _items:
     - Item: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
-      Cost: 15
+      Cost: 5
     - Item: {fileID: 11400000, guid: 408d006c38edea344b42839c8137496d, type: 2}
-      Cost: 20
+      Cost: 1
   - _items:
     - Item: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
-      Cost: 20
+      Cost: 5
     - Item: {fileID: 11400000, guid: 408d006c38edea344b42839c8137496d, type: 2}
-      Cost: 30
+      Cost: 1
   - _items:
     - Item: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
-      Cost: 30
+      Cost: 5
     - Item: {fileID: 11400000, guid: 408d006c38edea344b42839c8137496d, type: 2}
-      Cost: 35
+      Cost: 1
+  - _items:
+    - Item: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
+      Cost: 5
+    - Item: {fileID: 11400000, guid: 408d006c38edea344b42839c8137496d, type: 2}
+      Cost: 1
+  - _items:
+    - Item: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
+      Cost: 5
+    - Item: {fileID: 11400000, guid: 408d006c38edea344b42839c8137496d, type: 2}
+      Cost: 1
+  - _items:
+    - Item: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
+      Cost: 5
+    - Item: {fileID: 11400000, guid: 408d006c38edea344b42839c8137496d, type: 2}
+      Cost: 1
   _message: "\u041F\u0440\u043E\u0431\u0438\u0442\u0438\u0435 \u0431\u0440\u043E\u043D\u0438
     +1"

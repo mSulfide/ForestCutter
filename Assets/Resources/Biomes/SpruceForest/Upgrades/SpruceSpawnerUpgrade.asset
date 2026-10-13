@@ -24,7 +24,7 @@ MonoBehaviour:
     TreePool:
       _values:
       - _value: {fileID: 11400000, guid: 50b49367d03367f488aaa27707050ce8, type: 2}
-        _weight: 9
+        _weight: 8
       - _value: {fileID: 11400000, guid: f71cb6364230cee4fb3e2c3761a5ed0d, type: 2}
         _weight: 1
   - Delay: 1.5
@@ -51,9 +51,45 @@ MonoBehaviour:
         _weight: 1
       - _value: {fileID: 11400000, guid: f71cb6364230cee4fb3e2c3761a5ed0d, type: 2}
         _weight: 3
-  - Delay: 6
+  - Delay: 2.1
+    AddMaxCount: 3
+    TreePool:
+      _values:
+      - _value: {fileID: 11400000, guid: f71cb6364230cee4fb3e2c3761a5ed0d, type: 2}
+        _weight: 6
+      - _value: {fileID: 11400000, guid: 50b49367d03367f488aaa27707050ce8, type: 2}
+        _weight: 3
+      - _value: {fileID: 11400000, guid: 26fb1e749837a5444baf46d9d2a7da1d, type: 2}
+        _weight: 1
+  - Delay: 2.2
+    AddMaxCount: 3
+    TreePool:
+      _values:
+      - _value: {fileID: 11400000, guid: f71cb6364230cee4fb3e2c3761a5ed0d, type: 2}
+        _weight: 6
+      - _value: {fileID: 11400000, guid: 26fb1e749837a5444baf46d9d2a7da1d, type: 2}
+        _weight: 1
+  - Delay: 2.3
+    AddMaxCount: 4
+    TreePool:
+      _values:
+      - _value: {fileID: 11400000, guid: f71cb6364230cee4fb3e2c3761a5ed0d, type: 2}
+        _weight: 3
+      - _value: {fileID: 11400000, guid: 26fb1e749837a5444baf46d9d2a7da1d, type: 2}
+        _weight: 1
+  - Delay: 2.4
+    AddMaxCount: 4
+    TreePool:
+      _values:
+      - _value: {fileID: 11400000, guid: f71cb6364230cee4fb3e2c3761a5ed0d, type: 2}
+        _weight: 2
+      - _value: {fileID: 11400000, guid: 26fb1e749837a5444baf46d9d2a7da1d, type: 2}
+        _weight: 1
+  - Delay: 2.5
     AddMaxCount: 5
     TreePool:
       _values:
       - _value: {fileID: 11400000, guid: f71cb6364230cee4fb3e2c3761a5ed0d, type: 2}
+        _weight: 1
+      - _value: {fileID: 11400000, guid: 26fb1e749837a5444baf46d9d2a7da1d, type: 2}
         _weight: 3

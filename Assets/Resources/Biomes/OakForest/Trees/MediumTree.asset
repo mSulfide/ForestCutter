@@ -28,6 +28,6 @@ MonoBehaviour:
     _count:
       _values:
       - _value: 0
-        _weight: 17
+        _weight: 4
       - _value: 1
-        _weight: 3
+        _weight: 1

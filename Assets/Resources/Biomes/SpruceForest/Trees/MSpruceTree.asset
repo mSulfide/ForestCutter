@@ -37,6 +37,6 @@ MonoBehaviour:
     _count:
       _values:
       - _value: 0
-        _weight: 19
+        _weight: 6
       - _value: 1
         _weight: 1

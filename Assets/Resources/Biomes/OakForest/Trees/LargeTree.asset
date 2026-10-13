@@ -28,7 +28,7 @@ MonoBehaviour:
     _count:
       _values:
       - _value: 0
-        _weight: 30
+        _weight: 20
       - _value: 1
         _weight: 9
       - _value: 2

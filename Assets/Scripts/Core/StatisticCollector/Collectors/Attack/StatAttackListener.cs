@@ -9,7 +9,7 @@ public class StatAttackListener : MonoBehaviour
     {
         StatAttackInfo stat = new()
         {
-            Damage = info.Damage,
+            Damage = Mathf.Max(0, info.Damage),
             Health = info.Target?.Current ?? 0,
             Force = info.Force,
             Armor = info.ArmorIgnore
