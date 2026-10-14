@@ -1916,8 +1916,8 @@ GameObject:
   - component: {fileID: 1518028782}
   - component: {fileID: 1518028784}
   - component: {fileID: 1518028783}
-  - component: {fileID: 1518028786}
   - component: {fileID: 1518028788}
+  - component: {fileID: 1518028786}
   - component: {fileID: 1518028787}
   m_Layer: 0
   m_Name: Player
@@ -2096,7 +2096,8 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33ac8669d3bda10429eda8e0275b27f1, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StatInventoryListener
+  m_EditorClassIdentifier: Assembly-CSharp::StatPickUpListener
+  _delay: 0.5
 --- !u!1 &1569732943
 GameObject:
   m_ObjectHideFlags: 0

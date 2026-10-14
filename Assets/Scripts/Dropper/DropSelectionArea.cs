@@ -12,19 +12,30 @@ public class DropSelectionArea : MonoBehaviour
 
     private Camera _mainCamera;
 
-    public event Action OnPickUp;
+    private Inventory Inventory => _inventory ??= GetComponent<Inventory>() ?? gameObject.AddComponent<Inventory>();
+
+    public event Action<Item, uint> OnPickUp;
 
     private IEnumerator PickUp(Drop drop)
     {
-        OnPickUp?.Invoke();
+        Item itemType = null;
+        uint count = 0;
+        if (drop.TryGetComponent(out Inventory inventory))
+            foreach (var item in inventory)
+            {
+                itemType = item;
+                count = inventory.CountOf(item);
+            }
+        if (itemType == null)
+            yield break;
+
+        OnPickUp?.Invoke(itemType, count);
 
         Vector3 endPoint = transform.position;
         if (drop.TryGetComponent(out Mover mover))
             yield return mover.MoveTo(endPoint, speed: _pickupSpeed);
-        Inventory currentInventory = _inventory ?? GetComponent<Inventory>() ?? gameObject.AddComponent<Inventory>();
-        if (drop.TryGetComponent(out Inventory inventory))
-            foreach (var item in inventory)
-                currentInventory.Add(item, inventory.CountOf(item));
+        Inventory.Add(itemType, count);
+
         Destroy(drop.gameObject);
     }
 

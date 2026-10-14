@@ -8,7 +8,7 @@ public class PickUpEffect : MonoBehaviour
     private AudioPlayer _audioPlayer;
     private DropSelectionArea _selection;
 
-    private void PickUpHandler()
+    private void PickUpHandler(Item item, uint count)
     {
         _audioPlayer.Play(_sound);
     }
