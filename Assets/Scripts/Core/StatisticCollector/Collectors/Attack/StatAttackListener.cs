@@ -16,6 +16,8 @@ public class StatAttackListener : MonoBehaviour
         };
 
         Context.Stats.AddRecord(stat);
+        Context.Stats.Global.TotalClick++;
+        Context.Stats.Global.TotalDamage += (uint)Mathf.Min(stat.Damage, stat.Health);
     }
 
     private void Awake()

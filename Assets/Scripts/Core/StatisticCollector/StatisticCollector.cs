@@ -11,21 +11,25 @@ public class StatisticCollector : MonoBehaviour, ISaver
         public float Time;
         public object Data;
 
-        public StatRecord(object data)
+        public StatRecord(object data, float time)
         {
             Type = data.GetType().ToString();
-            Time = UnityEngine.Time.time;
+            Time = time;
             Data = data;
         }
     }
 
     private const string path = "Logs";
+    private const string pathGlobal = "Global";
 
     private readonly List<StatRecord> _records = new();
+    private GlobalStatistic _global;
+
+    public GlobalStatistic Global => _global;
 
     public void AddRecord(object record)
     {
-        _records.Add(new(record));
+        _records.Add(new(record, _global.Time));
     }
 
     public void Save()
@@ -35,5 +39,19 @@ public class StatisticCollector : MonoBehaviour, ISaver
         Context.Storage.Append(provider.GetPath(Context.Game.State.Name, path), _records);
 
         _records.Clear();
+
+        Context.Storage.Save(provider.GetPath(Context.Game.State.Name, pathGlobal), _global);
+    }
+
+    private void Start()
+    {
+        PathProvider provider = new(Context.Saves);
+
+        _global = Context.Storage.Load<GlobalStatistic>(provider.GetPath(Context.Game.State.Name, pathGlobal)) ?? new();
+    }
+
+    private void Update()
+    {
+        _global.Time += Time.deltaTime;
     }
 }
