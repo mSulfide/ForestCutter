@@ -3,11 +3,13 @@ using UnityEngine;
 using RandMath;
 using System;
 using System.IO;
+using System.Collections.Generic;
 
 public class TreeSpawner : Spawner
 {
     [SerializeField, Min(1f)] private float _range = 1f;
 
+    private readonly List<GameObject> _trees = new();
     private readonly TreeGenerator _generator = new();
     private Coroutine _spawning;
     private int _spawnCount = 0;
@@ -16,6 +18,7 @@ public class TreeSpawner : Spawner
     private readonly Upgradable<float> _delay = new(2f);
     private readonly Upgradable<RandomValue<TreeSettings>> _treePool = new(null);
 
+    public List<GameObject> Trees => _trees;
     public Upgradable<int> MaxSpawnCount => _maxSpawnCount;
 
     public Upgradable<float> Delay => _delay;
@@ -24,6 +27,7 @@ public class TreeSpawner : Spawner
 
     public event Action OnSpawningStart;
     public event Action OnSpawningStop;
+    public event Action<GameObject> OnSpawn;
 
     public GameObject Spawn(TreeSettings settings)
     {
@@ -31,8 +35,15 @@ public class TreeSpawner : Spawner
 
         tree.transform.parent = transform;
 
-        tree.GetComponent<Health>().OnPointsOver += () => _spawnCount--;
+        tree.GetComponent<Health>().OnPointsOver += () =>
+        {
+            _trees.Remove(tree);
+            _spawnCount--;
+        };
+        _trees.Add(tree);
         _spawnCount++;
+
+        OnSpawn?.Invoke(tree);
 
         return tree;
     }

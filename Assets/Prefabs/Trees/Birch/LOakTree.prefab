@@ -20,6 +20,8 @@ GameObject:
   - component: {fileID: 5719625756242487864}
   - component: {fileID: 4492243986454379034}
   - component: {fileID: 6008595588436842305}
+  - component: {fileID: 814524990788052266}
+  - component: {fileID: 4269236635124174252}
   m_Layer: 0
   m_Name: LOakTree
   m_TagString: Untagged
@@ -284,7 +286,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d9306753f4c76647a270832c3d00311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StatAttackListener
-  _health: {fileID: 0}
+--- !u!114 &814524990788052266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8059612314347504438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad145e2fa2cd15946b77abb7523ab0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Viscosity
+  _cooldownModifire: 1
+--- !u!114 &4269236635124174252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8059612314347504438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082af4ffb90d22f4ea0e2679f115fa22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Shield
+  _recharge: 1
 --- !u!1 &8406790651919035476
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ public class Attacker : MonoBehaviour
 
     private Camera _mainCamera;
     private float _lastAttackTimestamp;
+    private AttackInfo _lastAttack;
     private readonly Upgradable<AttackInfo> _attack = new(default);
 
     public Upgradable<int> BaseDamage => _baseDamage;
@@ -57,8 +58,7 @@ public class Attacker : MonoBehaviour
 
         if (aim != null)
         {
-            float cooldown = _cooldown.GetValue();
-            float force = _damageByTime.Evaluate((Time.time - _lastAttackTimestamp) / cooldown);
+            float force = _lastAttack.Cooldown > 0f ? _damageByTime.Evaluate((Time.time - _lastAttackTimestamp) / _lastAttack.Cooldown) : 1f;
             int damage = Mathf.RoundToInt(_baseDamage.GetValue() * force);
 
             _attack.BaseValue = new()
@@ -66,7 +66,7 @@ public class Attacker : MonoBehaviour
                 Damage = damage,
                 Target = aim,
                 Position = hit?.point ?? aim.transform.position,
-                Cooldown = cooldown,
+                Cooldown = _cooldown.GetValue(),
                 Force = force
             };
 
@@ -80,6 +80,8 @@ public class Attacker : MonoBehaviour
             OnAttackAction?.Invoke(info);
 
             aim.TakeAttack(info);
+
+            _lastAttack = info;
         }
     }
 
