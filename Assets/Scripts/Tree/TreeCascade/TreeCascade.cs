@@ -50,7 +50,6 @@ public class TreeCascade : MonoBehaviour
                 Target = aim,
                 Position = hit.point,
                 Force = 1f,
-                ArmorIgnore = 1f,
                 Cascade = cascade
             };
 
