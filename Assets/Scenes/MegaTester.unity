@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eceac09b39d85f48972d40c331053a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CursorRecharge
-  _attacker: {fileID: 1518028779}
+  _attacker: {fileID: 1518028790}
   _image: {fileID: 175154191}
 --- !u!114 &175154191
 MonoBehaviour:
@@ -678,7 +678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1844d5cbf8b18b244b0e267168e7ffb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArmorIgnoreUpgrader
-  _attacker: {fileID: 1518028779}
+  _attacker: {fileID: 1518028790}
 --- !u!1 &458743313
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,6 +906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestSpawner
   _range: 5
+  _attacker: {fileID: 1518028790}
 --- !u!1 &863123787
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,7 +1399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798c903990424104e84881ae79529069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attacker: {fileID: 1518028779}
+  _attacker: {fileID: 1518028790}
 --- !u!1 &975790368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1443,7 +1444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d544cfc33dc522844aa10fc8998a3775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TreeCascadeUpgrader
-  _attacker: {fileID: 1518028779}
+  _attacker: {fileID: 1518028790}
 --- !u!1001 &987947349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1708,7 +1709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad73ec45ac9b2b44ba2baef88db4224c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attacker: {fileID: 1518028779}
+  _attacker: {fileID: 1518028790}
 --- !u!1 &1273302441
 GameObject:
   m_ObjectHideFlags: 0
@@ -1991,7 +1992,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1518028778}
-  - component: {fileID: 1518028779}
+  - component: {fileID: 1518028790}
   - component: {fileID: 1518028789}
   - component: {fileID: 1518028782}
   - component: {fileID: 1518028784}
@@ -2026,47 +2027,6 @@ Transform:
   - {fileID: 975790369}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1518028779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1518028777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdc6643b30593e144b4c3c20143ffde6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _baseDamage:
-    _baseValue: 6
-  _cooldown:
-    _baseValue: 0.8
-  _autoAimRange: 0.5
-  _damageByTime:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &1518028782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2178,6 +2138,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbdcde89ce00a3a4c996fe3787189daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InfinityInventory
+--- !u!114 &1518028790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518028777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 698777ce50852384da5536835fba3d17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestAttacker
+  _baseDamage:
+    _baseValue: 6
+  _cooldown:
+    _baseValue: 0.8
+  _autoAimRange: 0
+  _damageByTime:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1569732943
 GameObject:
   m_ObjectHideFlags: 0
@@ -2704,7 +2705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93792718499a1fa4ca2843242b49e9bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attacker: {fileID: 1518028779}
+  _attacker: {fileID: 1518028790}
 --- !u!1001 &1946153505
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2864,7 +2865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: _MegaTest
-  _startLevel: 1
+  _startLevel: 0
 --- !u!114 &1971903612
 MonoBehaviour:
   m_ObjectHideFlags: 0

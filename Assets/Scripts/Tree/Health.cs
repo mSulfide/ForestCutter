@@ -40,11 +40,7 @@ public class Health : MonoBehaviour
 
     public void SetMax(int newMax, bool fillToMax = false)
     {
-        newMax = Math.Max(1, newMax);
-        if (newMax == Max)
-            return;
-
-        Max = newMax;
+        Max = Math.Max(1, newMax);
         if (IsAlive)
         {
             Current = fillToMax ? Max : Math.Min(Current, Max);
