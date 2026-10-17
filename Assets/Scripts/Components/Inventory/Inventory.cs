@@ -33,7 +33,7 @@ public class Inventory : MonoBehaviour, IEnumerable<Item>
         }
     }
 
-    public uint CountOf(Item type) => _inventory.TryGetValue(type, out uint count) ? count : 0;
+    public virtual uint CountOf(Item type) => _inventory.TryGetValue(type, out uint count) ? count : 0;
 
     public void Clear()
     {

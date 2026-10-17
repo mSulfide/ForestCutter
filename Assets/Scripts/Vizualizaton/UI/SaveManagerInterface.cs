@@ -8,6 +8,7 @@ public class SaveManagerInterface : MonoBehaviour
     public void StartGame()
     {
         Context.Game.StartGame(_input.text);
+        Context.Game.LoadScene(EScene.MainScene);
     }
 
     public void DeleteGame()

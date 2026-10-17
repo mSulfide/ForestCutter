@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,13 +25,16 @@ public class StatisticCollector : MonoBehaviour, ISaver
 
     private readonly List<StatRecord> _records = new();
     private GlobalStatistic _global;
+    private Coroutine _timer;
 
     public GlobalStatistic Global => _global;
 
-    public void AddRecord(object record)
+    public void AddRecord(object record, float time)
     {
-        _records.Add(new(record, _global.Time));
+        _records.Add(new(record, time));
     }
+
+    public void AddRecord(object record) => AddRecord(record, _global.Time);
 
     public void Save()
     {
@@ -43,15 +47,38 @@ public class StatisticCollector : MonoBehaviour, ISaver
         Context.Storage.Save(provider.GetPath(Context.Game.State.Name, pathGlobal), _global);
     }
 
-    private void Start()
+    private void GameStartHandler()
     {
         PathProvider provider = new(Context.Saves);
 
         _global = Context.Storage.Load<GlobalStatistic>(provider.GetPath(Context.Game.State.Name, pathGlobal)) ?? new();
+
+        _timer = StartCoroutine(StartTimer());
     }
 
-    private void Update()
+    private void GameStopHandler()
     {
-        _global.Time += Time.deltaTime;
+        StopCoroutine(_timer);
+    }
+
+    private IEnumerator StartTimer()
+    {
+        while (Context.Game.IsPlaying())
+        {
+            _global.Time += Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    private void OnEnable()
+    {
+        Context.Game.OnStart += GameStartHandler;
+        Context.Game.OnStop += GameStopHandler;
+    }
+
+    private void OnDisable()
+    {
+        Context.Game.OnStart -= GameStartHandler;
+        Context.Game.OnStop -= GameStopHandler;
     }
 }

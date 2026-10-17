@@ -11,6 +11,9 @@ public class Game : MonoBehaviour
 
     public GameStorage Storage => _storage;
 
+    public event Action OnStart;
+    public event Action OnStop;
+
     public void StartGame(string name, EGameLevel? startLevel = null)
     {
         if (IsPlaying())
@@ -25,12 +28,14 @@ public class Game : MonoBehaviour
 
         _storage.SetState(_state);
 
-        LoadScene(EScene.MainScene);
+        OnStart?.Invoke();
     }
 
     public void ExitGame()
     {
         _state = null;
+
+        OnStop?.Invoke();
 
         LoadScene(EScene.MainMenu);
     }
