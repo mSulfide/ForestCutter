@@ -1,17 +1,16 @@
 using System.Linq;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Attacker : MonoBehaviour
 {
     public delegate void AttackAction(AttackInfo info);
 
+    [SerializeField] private Player _player;
     [SerializeField] private Upgradable<int> _baseDamage = new(1);
     [SerializeField] private Upgradable<float> _cooldown = new(1f);
     [SerializeField, Min(0f)] private float _autoAimRange = 0f;
     [SerializeField] private AnimationCurve _damageByTime = AnimationCurve.Linear(0f, 0f, 1f, 1f);
 
-    private Camera _mainCamera;
     private float _lastAttackTimestamp;
     private AttackInfo _lastAttack;
     private readonly Upgradable<AttackInfo> _attack = new(default);
@@ -23,18 +22,6 @@ public class Attacker : MonoBehaviour
     public Upgradable<AttackInfo> Attack => _attack;
 
     public event AttackAction OnAttackAction;
-
-    public void OnAttack()
-    {
-        AttackByRay(_mainCamera.ScreenPointToRay(Input.mousePosition));
-    }
-
-    private float GetSqrDistance(Ray ray, Vector3 position)
-    {
-        float volume = ray.direction.z * (ray.origin.x - position.x) - ray.direction.x * (ray.origin.z - position.z);
-        float sqrSquare = ray.direction.x * ray.direction.x + ray.direction.z * ray.direction.z;
-        return volume * volume / sqrSquare;
-    }
 
     private void AttackByRay(Ray ray)
     {
@@ -85,8 +72,20 @@ public class Attacker : MonoBehaviour
         }
     }
 
-    private void Start()
+    private float GetSqrDistance(Ray ray, Vector3 position)
     {
-        _mainCamera = Camera.main;
+        float volume = ray.direction.z * (ray.origin.x - position.x) - ray.direction.x * (ray.origin.z - position.z);
+        float sqrSquare = ray.direction.x * ray.direction.x + ray.direction.z * ray.direction.z;
+        return volume * volume / sqrSquare;
+    }
+
+    private void OnEnable()
+    {
+        _player.OnAttackClick += AttackByRay;
+    }
+
+    private void OnDisable()
+    {
+        _player.OnAttackClick -= AttackByRay;
     }
 }
