@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9668feb0339534f80738a5f382acea, type: 3}
   m_Name: 2_Cooldown
   m_EditorClassIdentifier: Assembly-CSharp::PriceList
-  _current: {fileID: 0}
+  _current: {fileID: 11400000, guid: 1d5dd7a861ec27f42928347babf9c526, type: 2}
   _costs:
   - _items:
     - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
