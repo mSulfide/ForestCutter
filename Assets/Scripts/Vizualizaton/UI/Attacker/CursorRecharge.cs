@@ -32,20 +32,18 @@ public class CursorRecharge : MonoBehaviour
         _fillCursore = StartCoroutine(FillCursore(info.Cooldown));
     }
 
-    private void PointMoveHandler(Vector2 position)
+    private void Update()
     {
-        transform.position = position;
+        transform.position = _player.MousePosition;
     }
 
     private void OnEnable()
     {
-        _player.OnPointMove += PointMoveHandler;
         _attacker.OnAttackAction += AttackHandler;
     }
 
     private void OnDisable()
     {
-        _player.OnPointMove -= PointMoveHandler;
         _attacker.OnAttackAction -= AttackHandler;
     }
 }

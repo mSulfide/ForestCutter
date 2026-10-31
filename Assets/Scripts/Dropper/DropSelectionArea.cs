@@ -11,8 +11,6 @@ public class DropSelectionArea : MonoBehaviour
     [SerializeField] private float _pickupSpeed = 10f;
     [SerializeField] private Inventory _inventory;
 
-    private Camera _mainCamera;
-    private Vector3 _look;
     private Vector3 t_lastPosition;
 
     private Inventory Inventory => _inventory ??= GetComponent<Inventory>() ?? gameObject.AddComponent<Inventory>();
@@ -42,20 +40,9 @@ public class DropSelectionArea : MonoBehaviour
         Destroy(drop.gameObject);
     }
 
-    private void PointMoveHandler(Vector2 position)
-    {
-        _look = position;
-    }
-
-    private void Start()
-    {
-        _mainCamera = Camera.main;
-    }
-
-    private void Update()
+    public void PickUpByRay(Ray ray)
     {
         Plane plane = new(Vector3.up, Vector3.zero);
-        Ray ray = _mainCamera.ScreenPointToRay(_look);
         Vector3 position = plane.Raycast(ray, out float point) ? ray.GetPoint(point) : Vector3.zero;
 
         float range = Mathf.Clamp((t_lastPosition - position).magnitude / Time.deltaTime / 100f, 0f, _maxRange);
@@ -66,15 +53,5 @@ public class DropSelectionArea : MonoBehaviour
         foreach (var hit in hits)
             if (hit.collider.TryGetComponent(out Drop drop) && !drop.IsMoving)
                 StartCoroutine(PickUp(drop));
-    }
-
-    private void OnEnable()
-    {
-        _player.OnPointMove += PointMoveHandler;
-    }
-
-    private void OnDisable()
-    {
-        _player.OnPointMove -= PointMoveHandler;
     }
 }

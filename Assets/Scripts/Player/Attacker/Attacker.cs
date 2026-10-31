@@ -5,7 +5,6 @@ public class Attacker : MonoBehaviour
 {
     public delegate void AttackAction(AttackInfo info);
 
-    [SerializeField] private Player _player;
     [SerializeField] private Upgradable<int> _baseDamage = new(1);
     [SerializeField] private Upgradable<float> _cooldown = new(1f);
     [SerializeField, Min(0f)] private float _autoAimRange = 0f;
@@ -23,7 +22,7 @@ public class Attacker : MonoBehaviour
 
     public event AttackAction OnAttackAction;
 
-    private void AttackByRay(Ray ray)
+    public void AttackByRay(Ray ray)
     {
         RaycastHit? hit = Physics.Raycast(ray, out RaycastHit hitInfo) ? hitInfo : null;
         Health aim = (hit.HasValue && hit.Value.collider.TryGetComponent(out Health health) && health.IsAlive) ? health : null;
@@ -77,15 +76,5 @@ public class Attacker : MonoBehaviour
         float volume = ray.direction.z * (ray.origin.x - position.x) - ray.direction.x * (ray.origin.z - position.z);
         float sqrSquare = ray.direction.x * ray.direction.x + ray.direction.z * ray.direction.z;
         return volume * volume / sqrSquare;
-    }
-
-    private void OnEnable()
-    {
-        _player.OnAttackClick += AttackByRay;
-    }
-
-    private void OnDisable()
-    {
-        _player.OnAttackClick -= AttackByRay;
     }
 }

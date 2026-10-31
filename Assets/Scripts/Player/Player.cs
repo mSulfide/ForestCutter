@@ -1,30 +1,51 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private Attacker _attacker;
+    [SerializeField] private DropSelectionArea _selection;
 
+    private InputSystem_Actions _actions;
     private Camera _mainCamera;
-    private Vector2 _mousePosition;
 
-    public event Action<Vector2> OnPointMove;
-    public event Action<Ray> OnAttackClick;
+    public Vector2 MousePosition { get; private set; }
 
-    public void OnPoint(InputValue value)
+    private void PointHandler(InputAction.CallbackContext context)
     {
-        _mousePosition = value.Get<Vector2>();
-        OnPointMove?.Invoke(_mousePosition);
+        MousePosition = context.ReadValue<Vector2>();
+        _selection.PickUpByRay(_mainCamera.ScreenPointToRay(MousePosition));
     }
-    
-    public void OnAttack()
+
+    private void AttackHandler(InputAction.CallbackContext context)
     {
-        OnAttackClick?.Invoke(_mainCamera.ScreenPointToRay(_mousePosition));
+        if (context.performed)
+            _attacker.AttackByRay(_mainCamera.ScreenPointToRay(MousePosition));
+    }
+
+    private void Awake()
+    {
+        _actions = new();
     }
 
     private void Start()
     {
         _mainCamera = Camera.main;
+    }
+
+    private void OnEnable()
+    {
+        _actions.Player.Enable();
+        _actions.Player.Attack.performed += AttackHandler;
+        _actions.Player.Attack.canceled += AttackHandler;
+        _actions.Player.Point.performed += PointHandler;
+    }
+
+    private void OnDisable()
+    {
+        _actions.Player.Disable();
+        _actions.Player.Attack.performed -= AttackHandler;
+        _actions.Player.Attack.canceled -= AttackHandler;
+        _actions.Player.Point.performed -= PointHandler;
     }
 }
