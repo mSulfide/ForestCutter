@@ -39,11 +39,11 @@ public class CursorRecharge : MonoBehaviour
 
     private void OnEnable()
     {
-        _attacker.OnAttackAction += AttackHandler;
+        _attacker.OnAttack += AttackHandler;
     }
 
     private void OnDisable()
     {
-        _attacker.OnAttackAction -= AttackHandler;
+        _attacker.OnAttack -= AttackHandler;
     }
 }

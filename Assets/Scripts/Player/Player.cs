@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     [SerializeField] private Attacker _attacker;
+    [SerializeField] private AutoAttacker _autoAttacker;
     [SerializeField] private DropSelectionArea _selection;
 
     private InputSystem_Actions _actions;
@@ -11,16 +12,22 @@ public class Player : MonoBehaviour
 
     public Vector2 MousePosition { get; private set; }
 
+    public Ray Pointer { get; private set; }
+
     private void PointHandler(InputAction.CallbackContext context)
     {
         MousePosition = context.ReadValue<Vector2>();
-        _selection.PickUpByRay(_mainCamera.ScreenPointToRay(MousePosition));
+        Pointer = _mainCamera.ScreenPointToRay(MousePosition);
+
+        _selection.PickUpByRay(Pointer);
     }
 
     private void AttackHandler(InputAction.CallbackContext context)
     {
         if (context.performed)
-            _attacker.AttackByRay(_mainCamera.ScreenPointToRay(MousePosition));
+            _attacker.AttackByRay(Pointer);
+        if (context.canceled)
+            _autoAttacker.Stop();
     }
 
     private void Awake()

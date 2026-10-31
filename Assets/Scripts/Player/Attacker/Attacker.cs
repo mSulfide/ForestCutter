@@ -20,7 +20,7 @@ public class Attacker : MonoBehaviour
 
     public Upgradable<AttackInfo> Attack => _attack;
 
-    public event AttackAction OnAttackAction;
+    public event AttackAction OnAttack;
 
     public void AttackByRay(Ray ray)
     {
@@ -63,7 +63,7 @@ public class Attacker : MonoBehaviour
             foreach (var modifire in info.Target.GetComponents<IAttackModifire>())
                 info = modifire.Modificate(info);
 
-            OnAttackAction?.Invoke(info);
+            OnAttack?.Invoke(info);
 
             aim.TakeAttack(info);
 

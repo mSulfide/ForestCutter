@@ -1981,6 +1981,7 @@ GameObject:
   - component: {fileID: 1518028783}
   - component: {fileID: 1518028788}
   - component: {fileID: 1518028786}
+  - component: {fileID: 1518028789}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2131,6 +2132,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StatPickUpListener
   _delay: 0.5
+--- !u!114 &1518028789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518028777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b05ca45e6eb8094ba2faa8c3eabef1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AutoAttacker
+  _player: {fileID: 1572923313}
+  _maxDelay: 0.8
+  _deltaDelay: 0.05
 --- !u!1 &1569732943
 GameObject:
   m_ObjectHideFlags: 0
@@ -2186,7 +2202,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1572923315}
   - component: {fileID: 1572923313}
-  - component: {fileID: 1572923317}
   m_Layer: 0
   m_Name: PlayerInput
   m_TagString: Untagged
@@ -2207,6 +2222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   _attacker: {fileID: 1518028779}
+  _autoAttacker: {fileID: 1518028789}
   _selection: {fileID: 1518028784}
 --- !u!4 &1572923315
 Transform:
@@ -2223,18 +2239,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1572923317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1572923312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfaa13713c317e84eb63b3ced0b62340, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MyDebug
 --- !u!1 &1610026216
 GameObject:
   m_ObjectHideFlags: 0
