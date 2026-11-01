@@ -5,31 +5,30 @@ using UnityEngine;
 public class AutoAttacker : MonoBehaviour
 {
     [SerializeField] private Player _player;
-    [SerializeField] private float _maxDelay;
-    [SerializeField] private float _deltaDelay;
+    [SerializeField] private AnimationCurve _delayByHeat;
+    [Header("Overheating")]
+    [SerializeField] private AnimationCurve _heatingByHeat;
+    [SerializeField] private float _coolding;
 
     private Attacker _attacker;
-    private float _delay = 0f;
+    private float _overheat = 0f;
     private Coroutine _autoAttack;
 
-    private float Delay
+    private readonly MultiplierUpgrade _cooldown = new(1f);
+
+    public float DelayMultiplier => _delayByHeat.Evaluate(_overheat);
+
+    public float Overheat => _overheat;
+
+    public void StartAttack()
     {
-        get
-        {
-            return _delay;
-        }
-        set
-        {
-            _delay = Mathf.Min(value, _maxDelay);
-            _cooldown.SetModifier(_delay);
-        }
+        if (_autoAttack != null)
+            StopCoroutine(_autoAttack);
+        _autoAttack = StartCoroutine(TryAttack());
     }
 
-    private readonly CooldownUpgrade _cooldown = new(0f);
-
-    public void Stop()
+    public void StopAttack()
     {
-        Delay = 0f;
         if (_autoAttack != null)
             StopCoroutine(_autoAttack);
     }
@@ -37,13 +36,21 @@ public class AutoAttacker : MonoBehaviour
     private IEnumerator DelayedAttack(float delay)
     {
         yield return new WaitForSeconds(delay);
-        _attacker.AttackByRay(_player.Pointer);
+        yield return TryAttack();
+    }
+
+    private IEnumerator TryAttack()
+    {
+        yield return new WaitUntil(() => _attacker.TryAttackByRay(_player.Pointer));
+        float deltaHeat = _heatingByHeat.Evaluate(_overheat);
+        if (_overheat + deltaHeat < 1f)
+            _overheat += deltaHeat;
+        else
+            _overheat = 1f;
     }
 
     private void AttackHandler(AttackInfo info)
     {
-        Delay += _deltaDelay;
-
         if (_autoAttack != null)
             StopCoroutine(_autoAttack);
         _autoAttack = StartCoroutine(DelayedAttack(info.Cooldown));
@@ -64,5 +71,15 @@ public class AutoAttacker : MonoBehaviour
     {
         _attacker.OnAttack -= AttackHandler;
         _attacker.Cooldown.Remove(_cooldown);
+    }
+
+    private void Update()
+    {
+        float deltaHeat = _coolding * Time.deltaTime;
+        if (_overheat - deltaHeat > 0f)
+            _overheat -= deltaHeat;
+        else
+            _overheat = 0f;
+        _cooldown.SetModifier(DelayMultiplier);
     }
 }

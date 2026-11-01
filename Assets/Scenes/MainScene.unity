@@ -2145,8 +2145,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AutoAttacker
   _player: {fileID: 1572923313}
-  _maxDelay: 0.8
-  _deltaDelay: 0.05
+  _maxDelay: 0.5
+  _delayByHeat:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -1.7767177
+      outSlope: -1.7767177
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.09420332
+    - serializedVersion: 3
+      time: 1
+      value: 0.15
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _heatingByHeat:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: -0.09
+      outSlope: -0.09
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.01
+      inSlope: -0.09
+      outSlope: -0.09
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _coolding: 0.1
 --- !u!1 &1569732943
 GameObject:
   m_ObjectHideFlags: 0
@@ -2202,6 +2250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1572923315}
   - component: {fileID: 1572923313}
+  - component: {fileID: 1572923316}
   m_Layer: 0
   m_Name: PlayerInput
   m_TagString: Untagged
@@ -2239,6 +2288,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1572923316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572923312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfaa13713c317e84eb63b3ced0b62340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MyDebug
+  AutoAttacker: {fileID: 1518028789}
 --- !u!1 &1610026216
 GameObject:
   m_ObjectHideFlags: 0

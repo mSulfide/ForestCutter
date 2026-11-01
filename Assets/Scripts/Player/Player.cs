@@ -24,10 +24,10 @@ public class Player : MonoBehaviour
 
     private void AttackHandler(InputAction.CallbackContext context)
     {
-        if (context.performed)
-            _attacker.AttackByRay(Pointer);
+        if (context.performed && !_attacker.TryAttackByRay(Pointer))
+            _autoAttacker.StartAttack();
         if (context.canceled)
-            _autoAttacker.Stop();
+            _autoAttacker.StopAttack();
     }
 
     private void Awake()

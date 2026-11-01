@@ -71,6 +71,13 @@ public class Attacker : MonoBehaviour
         }
     }
 
+    public bool TryAttackByRay(Ray ray)
+    {
+        float timestamp = _lastAttackTimestamp;
+        AttackByRay(ray);
+        return timestamp != _lastAttackTimestamp;
+    }
+
     private float GetSqrDistance(Ray ray, Vector3 position)
     {
         float volume = ray.direction.z * (ray.origin.x - position.x) - ray.direction.x * (ray.origin.z - position.z);
