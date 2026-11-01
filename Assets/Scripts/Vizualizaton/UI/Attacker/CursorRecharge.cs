@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class CursorRecharge : MonoBehaviour
 {
-    [SerializeField] private Player _player;
     [SerializeField] private Attacker _attacker;
     [SerializeField] private Image _image;
 
@@ -30,11 +29,6 @@ public class CursorRecharge : MonoBehaviour
         if (_fillCursore != null)
             StopCoroutine(_fillCursore);
         _fillCursore = StartCoroutine(FillCursore(info.Cooldown));
-    }
-
-    private void Update()
-    {
-        transform.position = _player.MousePosition;
     }
 
     private void OnEnable()
