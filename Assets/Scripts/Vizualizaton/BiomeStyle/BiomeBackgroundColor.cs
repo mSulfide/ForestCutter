@@ -8,10 +8,9 @@ public class BiomeBackgroundColor : MonoBehaviour
     {
         if (Context.Exist() && Context.Game.IsPlaying())
         {
-            BiomeStyle[] styles = Resources.LoadAll<BiomeStyle>($"Biomes/{Context.Game.State.Level}/");
+            BiomeStyle style = Context.Game.Storage.GetResource<BiomeStyle>();
 
-            if (styles.Length > 0)
-                _camera.backgroundColor = styles[0].BackgroundColor;
+            _camera.backgroundColor = style.BackgroundColor;
         }
     }
 }
