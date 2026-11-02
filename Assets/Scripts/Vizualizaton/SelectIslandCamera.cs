@@ -35,6 +35,7 @@ public class SelectIslandCamera : MonoBehaviour
         if (_islands.Count > 0)
             _lastIsland = _islands[0];
 
-        GoTo(_islands.Find(islandTransform => islandTransform.TryGetComponent(out SelectIsland island) && island.Level == Context.Game.State.Level));
+        if (Context.Exist() && Context.Game.IsPlaying())
+            GoTo(_islands.Find(islandTransform => islandTransform.TryGetComponent(out SelectIsland island) && island.Level == Context.Game.State.Level));
     }
 }
