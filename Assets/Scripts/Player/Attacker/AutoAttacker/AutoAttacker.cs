@@ -8,7 +8,8 @@ public class AutoAttacker : MonoBehaviour
     [SerializeField] private AnimationCurve _delayByHeat;
     [Header("Overheating")]
     [SerializeField] private AnimationCurve _heatingByHeat;
-    [SerializeField] private float _coolding;
+    [SerializeField] private float _waitCoolding;
+    [SerializeField] private float _workCoolding;
 
     private Attacker _attacker;
     private float _overheat = 0f;
@@ -19,6 +20,8 @@ public class AutoAttacker : MonoBehaviour
     public float DelayMultiplier => _delayByHeat.Evaluate(_overheat);
 
     public float Overheat => _overheat;
+
+    public bool IsOverheating { get; private set; }
 
     public void StartAttack()
     {
@@ -31,6 +34,7 @@ public class AutoAttacker : MonoBehaviour
     {
         if (_autoAttack != null)
             StopCoroutine(_autoAttack);
+        _autoAttack = null;
     }
 
     private IEnumerator DelayedAttack(float delay)
@@ -44,13 +48,21 @@ public class AutoAttacker : MonoBehaviour
         yield return new WaitUntil(() => _attacker.TryAttackByRay(_player.Pointer));
         float deltaHeat = _heatingByHeat.Evaluate(_overheat);
         if (_overheat + deltaHeat < 1f)
+        {
             _overheat += deltaHeat;
+        }
         else
+        {
             _overheat = 1f;
+            IsOverheating = true;
+        }
     }
 
     private void AttackHandler(AttackInfo info)
     {
+        if (IsOverheating)
+            return;
+
         if (_autoAttack != null)
             StopCoroutine(_autoAttack);
         _autoAttack = StartCoroutine(DelayedAttack(info.Cooldown));
@@ -75,11 +87,16 @@ public class AutoAttacker : MonoBehaviour
 
     private void Update()
     {
-        float deltaHeat = _coolding * Time.deltaTime;
+        float deltaHeat = (_autoAttack == null ? _waitCoolding : _workCoolding) * Time.deltaTime;
         if (_overheat - deltaHeat > 0f)
+        {
             _overheat -= deltaHeat;
+        }
         else
+        {
             _overheat = 0f;
+            IsOverheating = false;
+        }
         _cooldown.SetModifier(DelayMultiplier);
     }
 }
