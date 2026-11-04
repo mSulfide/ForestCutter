@@ -11,10 +11,6 @@ public class TreeSpawnAnimation : MonoBehaviour
         if (_size.length <= 0)
             yield break;
 
-        Collider collider = GetComponent<Collider>();
-        if (collider != null)
-            collider.enabled = false;
-
         float maxTime = _size.keys.Max(keyframe => keyframe.time);
         float time = _size.keys.Min(keyframe => keyframe.time);
 
@@ -25,9 +21,6 @@ public class TreeSpawnAnimation : MonoBehaviour
             time += Time.deltaTime;
             yield return null;
         }
-
-        if (collider != null)
-            collider.enabled = true;
     }
 
     private void Start()

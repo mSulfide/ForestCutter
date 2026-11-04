@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f6e25b07d1e572449c3706fb4d3b87c, type: 3}
-  m_Name: AutoAttackEnableUpgradeList
+  m_Name: AutoAttackEnableUpgrade
   m_EditorClassIdentifier: Assembly-CSharp::AutoAttackEnableUpgradeList
   _modifiers: 01

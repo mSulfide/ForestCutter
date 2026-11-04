@@ -940,6 +940,7 @@ MonoBehaviour:
   - {fileID: 975790370}
   - {fileID: 1270528723}
   - {fileID: 2103223479}
+  - {fileID: 1314075757}
   _saveParent: {fileID: 744190469}
 --- !u!114 &744190469
 MonoBehaviour:
@@ -1905,6 +1906,51 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &1314075756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1314075758}
+  - component: {fileID: 1314075757}
+  m_Layer: 0
+  m_Name: DelayByHeatUpgrader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1314075757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314075756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92c25d08ebfe205428cb907a69ac324e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DelayByHeatUpgrader
+  _autoAttacker: {fileID: 1518028789}
+--- !u!4 &1314075758
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314075756}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1518028778}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1443681819
 GameObject:
   m_ObjectHideFlags: 0
@@ -2029,6 +2075,7 @@ Transform:
   - {fileID: 975790369}
   - {fileID: 1270528722}
   - {fileID: 2103223478}
+  - {fileID: 1314075758}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1518028779
@@ -2197,22 +2244,22 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.15
-      inSlope: -0.050000004
-      outSlope: -0.050000004
-      tangentMode: 34
+      value: 0.2
+      inSlope: -0.041002154
+      outSlope: -0.041002154
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
+      outWeight: 0.36120006
     - serializedVersion: 3
       time: 1
-      value: 0.1
-      inSlope: -0.050000004
-      outSlope: -0.050000004
-      tangentMode: 34
+      value: 0.02
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -2519,7 +2566,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 4, y: 0}
-  m_SizeDelta: {x: -10, y: 574}
+  m_SizeDelta: {x: -10, y: 690}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1639170360
 MonoBehaviour:
@@ -2568,6 +2615,7 @@ MonoBehaviour:
   - {fileID: 975790370}
   - {fileID: 1270528723}
   - {fileID: 2103223479}
+  - {fileID: 1314075757}
 --- !u!1 &1742864571
 GameObject:
   m_ObjectHideFlags: 0

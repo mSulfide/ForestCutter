@@ -380,7 +380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad145e2fa2cd15946b77abb7523ab0d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Viscosity
-  _cooldownModifire: 0.8
+  _cooldownModifire: 0.7
 --- !u!114 &3668054696490689492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 082af4ffb90d22f4ea0e2679f115fa22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shield
-  _recharge: 0.9
+  _recharge: 0.95
 --- !u!114 &437876474004343216
 MonoBehaviour:
   m_ObjectHideFlags: 0
