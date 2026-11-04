@@ -6,7 +6,9 @@ public class Upgradable<T>
 {
     [SerializeField] private T _baseValue;
 
-    private readonly UpgradeContainer<T> _upgrades = new();
+    private UpgradeContainer<T> _upgrades;
+
+    private UpgradeContainer<T> Upgrades => _upgrades ??= new();
 
     public T BaseValue
     {
@@ -21,27 +23,18 @@ public class Upgradable<T>
 
     public void Add(Upgrade<T> upgrade)
     {
-        _upgrades.Add(upgrade);
-    }
-
-    public void Clear() => Clear(upgrade => true);
-
-    public void Clear(Predicate<Upgrade<T>> isRemove)
-    {
-        foreach (var upgrade in _upgrades)
-            if (isRemove.Invoke(upgrade))
-                _upgrades.Remove(upgrade);
+        Upgrades.Add(upgrade);
     }
 
     public void Remove(Upgrade<T> upgrade)
     {
-        _upgrades.Remove(upgrade);
+        Upgrades.Remove(upgrade);
     }
 
     public T GetValue()
     {
         T value = _baseValue;
-        foreach (Upgrade<T> upgrade in _upgrades)
+        foreach (Upgrade<T> upgrade in Upgrades)
             value = upgrade.Modificate(value);
         return value;
     }

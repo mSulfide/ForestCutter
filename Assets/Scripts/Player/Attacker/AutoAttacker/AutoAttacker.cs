@@ -5,11 +5,11 @@ using UnityEngine;
 public class AutoAttacker : MonoBehaviour
 {
     [SerializeField] private Player _player;
-    [SerializeField] private AnimationCurve _delayByHeat;
+    [SerializeField] private Upgradable<AnimationCurve> _delayByHeat;
     [Header("Overheating")]
     [SerializeField] private AnimationCurve _heatingByHeat;
-    [SerializeField] private float _waitCoolding;
-    [SerializeField] private float _workCoolding;
+    [SerializeField] private Upgradable<float> _waitColding = new(0f);
+    [SerializeField] private Upgradable<float> _workColding = new(0f);
 
     private Attacker _attacker;
     private float _overheat = 0f;
@@ -17,7 +17,13 @@ public class AutoAttacker : MonoBehaviour
 
     private readonly MultiplierUpgrade _cooldown = new(1f);
 
-    public float DelayMultiplier => _delayByHeat.Evaluate(_overheat);
+    public Upgradable<AnimationCurve> DelayByHeat => _delayByHeat;
+
+    public Upgradable<float> WaitColding => _waitColding;
+
+    public Upgradable<float> WorkColding => _workColding;
+
+    public float DelayMultiplier => _delayByHeat.GetValue().Evaluate(_overheat);
 
     public float Overheat => _overheat;
 
@@ -25,6 +31,9 @@ public class AutoAttacker : MonoBehaviour
 
     public void StartAttack()
     {
+        if (!enabled)
+            return;
+
         if (_autoAttack != null)
             StopCoroutine(_autoAttack);
         _autoAttack = StartCoroutine(TryAttack());
@@ -32,6 +41,8 @@ public class AutoAttacker : MonoBehaviour
 
     public void StopAttack()
     {
+        if (!enabled)
+            return;
         if (_autoAttack != null)
             StopCoroutine(_autoAttack);
         _autoAttack = null;
@@ -87,7 +98,7 @@ public class AutoAttacker : MonoBehaviour
 
     private void Update()
     {
-        float deltaHeat = (_autoAttack == null ? _waitCoolding : _workCoolding) * Time.deltaTime;
+        float deltaHeat = (_autoAttack == null ? _waitColding : _workColding).GetValue() * Time.deltaTime;
         if (_overheat - deltaHeat > 0f)
         {
             _overheat -= deltaHeat;
@@ -97,6 +108,6 @@ public class AutoAttacker : MonoBehaviour
             _overheat = 0f;
             IsOverheating = false;
         }
-        _cooldown.SetModifier(DelayMultiplier);
+        _cooldown.SetModifier(IsOverheating ? 1f : DelayMultiplier);
     }
 }
