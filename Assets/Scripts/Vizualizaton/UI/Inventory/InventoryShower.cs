@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class InventoryShower : MonoBehaviour
@@ -8,6 +7,7 @@ public class InventoryShower : MonoBehaviour
     [SerializeField] private ItemCounter _counterPrefab;
 
     private readonly Dictionary<Item, ItemCounter> _counters = new();
+    private List<Item> _filter;
 
     private void AddCounter(Item item)
     {
@@ -29,6 +29,9 @@ public class InventoryShower : MonoBehaviour
 
     private void UpdateInventory(Item item, int count)
     {
+        if (_filter != null && !_filter.Contains(item))
+            return;
+
         if (_counters.TryGetValue(item, out ItemCounter counter))
             counter.SetValue(_inventory.CountOf(item));
         else
@@ -36,6 +39,17 @@ public class InventoryShower : MonoBehaviour
 
         if (_inventory.CountOf(item) <= 0)
             RemoveCounter(item);
+    }
+
+    private void SetBiomeFilter()
+    {
+        _filter = Context.Game.Storage.GetResource<ItemFilter>()?.Content;
+    }
+
+    private void Start()
+    {
+        if (Context.Exist() && Context.Game.IsPlaying())
+            SetBiomeFilter();
     }
 
     private void OnEnable()

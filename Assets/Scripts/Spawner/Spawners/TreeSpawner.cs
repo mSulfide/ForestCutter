@@ -14,7 +14,7 @@ public class TreeSpawner : Spawner
     private int _spawnCount = 0;
 
     private readonly Upgradable<int> _maxSpawnCount = new(3);
-    private readonly Upgradable<float> _delay = new(2f);
+    private readonly Upgradable<float> _delay = new(1f);
     private readonly Upgradable<RandomValue<TreeSettings>> _treePool = new(null);
 
     public List<GameObject> Trees => _trees;
@@ -24,8 +24,6 @@ public class TreeSpawner : Spawner
 
     public Upgradable<RandomValue<TreeSettings>> TreePool => _treePool;
 
-    public event Action OnSpawningStart;
-    public event Action OnSpawningStop;
     public event Action<GameObject> OnSpawn;
 
     public GameObject Spawn(TreeSettings settings)
@@ -80,11 +78,10 @@ public class TreeSpawner : Spawner
 
     private IEnumerator Spawning()
     {
-        yield return new WaitForSeconds(_delay.GetValue());
         while (true)
         {
-            yield return new WaitUntil(() => _spawnCount < _maxSpawnCount.GetValue());
             yield return new WaitForSeconds(_delay.GetValue());
+            yield return new WaitUntil(() => _spawnCount < _maxSpawnCount.GetValue());
 
             Spawn(null, _range);
         }
@@ -99,8 +96,6 @@ public class TreeSpawner : Spawner
 
     private void OnEnable()
     {
-        OnSpawningStart?.Invoke();
-
         _spawning = StartCoroutine(Spawning());
     }
 
@@ -110,8 +105,6 @@ public class TreeSpawner : Spawner
         {
             StopCoroutine(_spawning);
             _spawning = null;
-
-            OnSpawningStop?.Invoke();
         }
     }
 

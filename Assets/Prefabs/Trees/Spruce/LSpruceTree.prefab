@@ -184,7 +184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d9306753f4c76647a270832c3d00311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StatAttackListener
-  _health: {fileID: 0}
 --- !u!114 &6589622812516818101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,7 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Armor
   _armor: 1
-  _damageThreshold: 150
+  _damageThreshold: 100
 --- !u!114 &-6042783152953982241
 MonoBehaviour:
   m_ObjectHideFlags: 0

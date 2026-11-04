@@ -16,5 +16,56 @@ MonoBehaviour:
   _costs:
   - _items:
     - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 1
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 1
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 1
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 1
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 1
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 1
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 1
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 2
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 2
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 3
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
       Cost: 5
-  _message: "\u0429\u0438\u0442\u0443 \u0445\u0430\u043D\u0430 +1"
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 10
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 20
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 30
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 40
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 50
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 60
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 70
+  _message: "\u0411\u0440\u043E\u043D\u044F +1"

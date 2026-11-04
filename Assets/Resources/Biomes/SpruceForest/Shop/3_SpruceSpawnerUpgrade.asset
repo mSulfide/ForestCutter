@@ -19,29 +19,29 @@ MonoBehaviour:
       Cost: 5
   - _items:
     - Item: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
-      Cost: 5
+      Cost: 10
   - _items:
     - Item: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
-      Cost: 5
+      Cost: 15
   - _items:
     - Item: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
-      Cost: 5
+      Cost: 20
   - _items:
     - Item: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
-      Cost: 5
+      Cost: 25
   - _items:
     - Item: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
-      Cost: 5
+      Cost: 30
   - _items:
     - Item: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
-      Cost: 5
+      Cost: 35
   - _items:
     - Item: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
-      Cost: 5
+      Cost: 40
   - _items:
     - Item: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
-      Cost: 5
+      Cost: 45
   - _items:
     - Item: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
-      Cost: 5
+      Cost: 50
   _message: "\u0421\u043E\u0441\u043D\u044B +1"

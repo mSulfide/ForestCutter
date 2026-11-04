@@ -16,5 +16,5 @@ MonoBehaviour:
   _delay: 5
   _treePool:
     _values:
-    - _value: {fileID: 11400000, guid: 0096e2ee41731af469453a53dec4d9a6, type: 2}
+    - _value: {fileID: 11400000, guid: d06e5655fff2ddd46a069f9f84089561, type: 2}
       _weight: 1

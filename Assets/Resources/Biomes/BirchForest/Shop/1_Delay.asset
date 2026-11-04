@@ -16,5 +16,56 @@ MonoBehaviour:
   _costs:
   - _items:
     - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 1
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 2
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 3
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 4
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
       Cost: 5
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 10
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 20
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 30
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 40
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 60
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 70
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 80
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 90
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 100
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 150
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 200
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 250
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 300
   _message: "\u0421\u043A\u043E\u0440\u043E\u0441\u0442\u044C +1"
