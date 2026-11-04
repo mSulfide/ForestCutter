@@ -119,6 +119,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &75125889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 75125891}
+  - component: {fileID: 75125890}
+  m_Layer: 0
+  m_Name: VIctory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &75125890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75125889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a4bb39cb4f8ac149a73bfa344a286b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeVictory
+  _pointsToWin: 3
+--- !u!4 &75125891
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75125889}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &89005837
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,6 +914,7 @@ GameObject:
   - component: {fileID: 744190470}
   - component: {fileID: 744190465}
   - component: {fileID: 744190468}
+  - component: {fileID: 744190471}
   - component: {fileID: 744190469}
   m_Layer: 0
   m_Name: MegaSaver
@@ -967,6 +1013,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inventory: {fileID: 1518028781}
+  _saveParent: {fileID: 744190469}
+--- !u!114 &744190471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744190464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bda7013cfa1e34f488c20284733ea528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VictorySaver
+  _victory: {fileID: 75125890}
   _saveParent: {fileID: 744190469}
 --- !u!1 &814901216
 GameObject:
@@ -2626,6 +2686,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1742864572}
   - component: {fileID: 1742864573}
+  - component: {fileID: 1742864574}
   m_Layer: 0
   m_Name: SpawnerUpgrader
   m_TagString: Untagged
@@ -2661,6 +2722,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawner: {fileID: 814901217}
+--- !u!114 &1742864574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742864571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e9d69edebfdbe64393e962e3b2d1d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WinPointByUpgrade
+  _victory: {fileID: 75125890}
+  _upgrader: {fileID: 1742864573}
+  _level: 9
 --- !u!1 &1871180724
 GameObject:
   m_ObjectHideFlags: 0
@@ -3078,4 +3154,5 @@ SceneRoots:
   - {fileID: 1569732945}
   - {fileID: 667757268}
   - {fileID: 744190467}
+  - {fileID: 75125891}
   - {fileID: 1971903610}

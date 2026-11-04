@@ -40,6 +40,11 @@ public class Game : MonoBehaviour
         LoadScene(EScene.MainMenu);
     }
 
+    public void WinGame()
+    {
+        Debug.Log("Victory!");
+    }
+
     public bool IsPlaying() => _state != null;
 
     public void LoadLevel(EGameLevel level)

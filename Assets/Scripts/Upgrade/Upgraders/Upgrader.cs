@@ -11,7 +11,7 @@ public abstract class Upgrader : MonoBehaviour
 
     public abstract int MaxLevel { get; }
 
-    public event Action OnLevelUp;
+    public event Action<int> OnLevelUp;
 
     public abstract void InvokeUpgrade(int level);
 
@@ -23,7 +23,7 @@ public abstract class Upgrader : MonoBehaviour
         {
             InvokeUpgrade(level);
             _level = level;
-            OnLevelUp?.Invoke();
+            OnLevelUp?.Invoke(level);
         }
     }
 }
