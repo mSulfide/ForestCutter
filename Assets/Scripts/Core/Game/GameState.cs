@@ -1,12 +1,10 @@
-using System;
-using UnityEngine;
-
 public class GameState
 {
     public const string DefaultName = "UnknownSave";
 
     private string _name = DefaultName;
     private EGameLevel _level = EGameLevel.OakForest;
+    private bool _victory = false;
 
     public string Name
     {
@@ -18,5 +16,11 @@ public class GameState
     {
         get => _level;
         set => _level = value;
+    }
+
+    public bool Victory
+    {
+        get => _victory;
+        set => _victory = value;
     }
 }

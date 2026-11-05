@@ -42,7 +42,11 @@ public class Game : MonoBehaviour
 
     public void WinGame()
     {
-        Debug.Log("Victory!");
+        if (!_state.Victory)
+        {
+            _state.Victory = true;
+            Debug.Log("Victory!");
+        }
     }
 
     public bool IsPlaying() => _state != null;
