@@ -23,5 +23,5 @@ MonoBehaviour:
     AddCount: 3
   - AddForce: 1.05
     AddCount: 3
-  - AddForce: 1.2
+  - AddForce: 2
     AddCount: 3

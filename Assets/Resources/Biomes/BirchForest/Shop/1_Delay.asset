@@ -34,50 +34,50 @@ MonoBehaviour:
       Cost: 10
   - _items:
     - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 15
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
       Cost: 20
   - _items:
     - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 25
+    - Item: {fileID: 11400000, guid: 9b73be155f8e9d042a964dfd65c3f1b0, type: 2}
+      Cost: 1
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
       Cost: 30
-  - _items:
-    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
-      Cost: 40
     - Item: {fileID: 11400000, guid: 9b73be155f8e9d042a964dfd65c3f1b0, type: 2}
       Cost: 1
   - _items:
     - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
-      Cost: 60
-    - Item: {fileID: 11400000, guid: 9b73be155f8e9d042a964dfd65c3f1b0, type: 2}
-      Cost: 1
-  - _items:
-    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
-      Cost: 70
+      Cost: 35
     - Item: {fileID: 11400000, guid: 9b73be155f8e9d042a964dfd65c3f1b0, type: 2}
       Cost: 2
   - _items:
     - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
-      Cost: 80
+      Cost: 40
     - Item: {fileID: 11400000, guid: 9b73be155f8e9d042a964dfd65c3f1b0, type: 2}
       Cost: 3
   - _items:
     - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
-      Cost: 90
+      Cost: 45
     - Item: {fileID: 11400000, guid: 9b73be155f8e9d042a964dfd65c3f1b0, type: 2}
       Cost: 4
   - _items:
     - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
-      Cost: 100
+      Cost: 50
     - Item: {fileID: 11400000, guid: 9b73be155f8e9d042a964dfd65c3f1b0, type: 2}
       Cost: 5
   - _items:
     - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 75
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 100
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 125
+  - _items:
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
       Cost: 150
-  - _items:
-    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
-      Cost: 200
-  - _items:
-    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
-      Cost: 250
-  - _items:
-    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
-      Cost: 300
   _message: "\u0421\u043A\u043E\u0440\u043E\u0441\u0442\u044C +1"

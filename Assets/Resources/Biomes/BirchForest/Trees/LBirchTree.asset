@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LBirchTree
   m_EditorClassIdentifier: Assembly-CSharp::TreeSettings
   _prefab: {fileID: 8059612314347504438, guid: 59ec978ad1b03f84f92bde507c402bf3, type: 3}
-  _health: 900
+  _health: 600
   _drop:
   - _itemType: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
     _count:

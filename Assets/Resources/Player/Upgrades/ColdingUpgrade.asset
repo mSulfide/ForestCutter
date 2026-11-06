@@ -16,10 +16,10 @@ MonoBehaviour:
   - Wait: 0.05
     Work: 0.05
   - Wait: 0.1
-    Work: 0.15
+    Work: 0.05
   - Wait: 0.2
-    Work: 0.2
+    Work: 0.075
   - Wait: 0.25
-    Work: 0.2
+    Work: 0.1
   - Wait: 0.4
-    Work: 0.2
+    Work: 0.125

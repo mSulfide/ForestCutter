@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Armor
   _armor: 1.35
-  _damageThreshold: 0
+  _damageThreshold: 30
 --- !u!1001 &3852142164365943321
 PrefabInstance:
   m_ObjectHideFlags: 0

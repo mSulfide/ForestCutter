@@ -74,9 +74,16 @@ public class AutoAttacker : MonoBehaviour
         if (IsOverheating)
             return;
 
+        if (info.Target.TryGetComponent(out Viscosity viscosity))
+            viscosity.WaitCooldown = _cooldown.Modificate(viscosity.WaitCooldown);
+
+        float? shieldRecharge = null;
+        if (info.Target.TryGetComponent(out Shield shield))
+            shieldRecharge = shield.Recharge - 0.05f;
+
         if (_autoAttack != null)
             StopCoroutine(_autoAttack);
-        _autoAttack = StartCoroutine(DelayedAttack(info.Cooldown));
+        _autoAttack = StartCoroutine(DelayedAttack(shieldRecharge ?? info.Cooldown));
     }
 
     private void Awake()

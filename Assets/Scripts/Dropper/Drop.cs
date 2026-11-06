@@ -8,6 +8,7 @@ public class Drop : MonoBehaviour
     private Mover _mover;
     private Action _unsubscribe;
 
+    public bool IsFalling { get; set; }
     public bool IsMoving { get; private set; }
     public float Radius => GetComponent<SphereCollider>().radius;
 
@@ -40,6 +41,7 @@ public class Drop : MonoBehaviour
         if ((transform.position - position).sqrMagnitude < eps)
             return;
 
+        IsFalling = true;
         StartCoroutine(FallDown(position));
     }
 

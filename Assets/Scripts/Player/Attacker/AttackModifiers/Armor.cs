@@ -7,7 +7,7 @@ public class Armor : MonoBehaviour, IAttackModifire
 
     public AttackInfo Modificate(AttackInfo info)
     {
-        info.Damage = _damageThreshold * info.ArmorIgnore < info.Damage ? Mathf.RoundToInt(info.Damage * (1 - Mathf.Clamp(_armor - info.ArmorIgnore, 0f, 1f))) : 0;
+        info.Damage = _damageThreshold * (1f - info.ArmorIgnore) < info.Damage ? Mathf.RoundToInt(info.Damage * (1 - Mathf.Clamp(_armor - info.ArmorIgnore, 0f, 1f))) : 0;
 
         return info;
     }

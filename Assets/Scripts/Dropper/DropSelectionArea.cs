@@ -32,6 +32,8 @@ public class DropSelectionArea : MonoBehaviour
 
         OnPickUp?.Invoke(itemType, count);
 
+        drop.IsFalling = false;
+
         Vector3 endPoint = transform.position;
         if (drop.TryGetComponent(out Mover mover))
             yield return mover.MoveTo(endPoint, speed: _pickupSpeed);
@@ -51,7 +53,7 @@ public class DropSelectionArea : MonoBehaviour
         List<RaycastHit> hits = new(Physics.SphereCastAll(ray, range, _maxDistance));
         hits.Sort((x, y) => x.distance < y.distance ? -1 : 1);
         foreach (var hit in hits)
-            if (hit.collider.TryGetComponent(out Drop drop) && !drop.IsMoving)
+            if (hit.collider.TryGetComponent(out Drop drop) && (!drop.IsMoving || drop.IsFalling))
                 StartCoroutine(PickUp(drop));
     }
 }
