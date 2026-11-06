@@ -68,4 +68,5 @@ MonoBehaviour:
   - _items:
     - Item: {fileID: 11400000, guid: 9b73be155f8e9d042a964dfd65c3f1b0, type: 2}
       Cost: 6
-  _message: "\u0411\u0440\u043E\u043D\u044F +1"
+  _message: "\u041F\u0440\u043E\u0431\u0438\u0442\u0438\u0435 \u0431\u0440\u043E\u043D\u0438
+    +1"
