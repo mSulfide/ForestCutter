@@ -5,29 +5,16 @@ using UnityEngine;
 public class AutoAttacker : MonoBehaviour
 {
     [SerializeField] private Player _player;
-    [SerializeField] private Upgradable<AnimationCurve> _delayByHeat;
-    [Header("Overheating")]
-    [SerializeField] private AnimationCurve _heatingByHeat;
-    [SerializeField] private Upgradable<float> _waitColding = new(0f);
-    [SerializeField] private Upgradable<float> _workColding = new(0f);
+    [SerializeField] private AnimationCurve _damageBySpeed;
+    [SerializeField] private Upgradable<AnimationCurve> _delayByAttack;
 
     private Attacker _attacker;
-    private float _overheat = 0f;
+    private uint _attackCount;
     private Coroutine _autoAttack;
 
-    private readonly MultiplierUpgrade _cooldown = new(1f);
+    private readonly AutoAttackUpgrade _upgrade = new(1f, 1f);
 
-    public Upgradable<AnimationCurve> DelayByHeat => _delayByHeat;
-
-    public Upgradable<float> WaitColding => _waitColding;
-
-    public Upgradable<float> WorkColding => _workColding;
-
-    public float DelayMultiplier => _delayByHeat.GetValue().Evaluate(_overheat);
-
-    public float Overheat => _overheat;
-
-    public bool IsOverheating { get; private set; }
+    public Upgradable<AnimationCurve> DelayByHeat => _delayByAttack;
 
     public void StartAttack()
     {
@@ -43,9 +30,24 @@ public class AutoAttacker : MonoBehaviour
     {
         if (!enabled)
             return;
+
         if (_autoAttack != null)
             StopCoroutine(_autoAttack);
+        DropAutoAttack();
+    }
+
+    private void DropAutoAttack()
+    {
         _autoAttack = null;
+        _attackCount = 0;
+        Modificate();
+    }
+
+    private void Modificate()
+    {
+        float cooldown = _delayByAttack.GetValue().Evaluate(_attackCount);
+        _upgrade.SetCooldown(cooldown);
+        _upgrade.SetDamage(cooldown * _damageBySpeed.Evaluate(cooldown));
     }
 
     private IEnumerator DelayedAttack(float delay)
@@ -57,30 +59,15 @@ public class AutoAttacker : MonoBehaviour
     private IEnumerator TryAttack()
     {
         yield return new WaitUntil(() => _attacker.TryAttackByRay(_player.Pointer));
-        float deltaHeat = _heatingByHeat.Evaluate(_overheat);
-        if (_overheat + deltaHeat < 1f)
-        {
-            _overheat += deltaHeat;
-        }
-        else
-        {
-            _overheat = 1f;
-            IsOverheating = true;
-        }
+        _attackCount++;
+        Modificate();
     }
 
     private void AttackHandler(AttackInfo info)
     {
-        if (IsOverheating)
-            return;
-
-        float? shieldRecharge = null;
-        if (info.Target.TryGetComponent(out Shield shield))
-            shieldRecharge = shield.Recharge - 0.05f;
-
         if (_autoAttack != null)
             StopCoroutine(_autoAttack);
-        _autoAttack = StartCoroutine(DelayedAttack(shieldRecharge ?? info.Cooldown));
+        _autoAttack = StartCoroutine(DelayedAttack(info.Cooldown));
     }
 
     private void Awake()
@@ -91,27 +78,12 @@ public class AutoAttacker : MonoBehaviour
     private void OnEnable()
     {
         _attacker.OnAttack += AttackHandler;
-        _attacker.Cooldown.Add(_cooldown);
+        _attacker.Attack.Add(_upgrade);
     }
 
     private void OnDisable()
     {
         _attacker.OnAttack -= AttackHandler;
-        _attacker.Cooldown.Remove(_cooldown);
-    }
-
-    private void Update()
-    {
-        float deltaHeat = (_autoAttack == null ? _waitColding : _workColding).GetValue() * Time.deltaTime;
-        if (_overheat - deltaHeat > 0f)
-        {
-            _overheat -= deltaHeat;
-        }
-        else
-        {
-            _overheat = 0f;
-            IsOverheating = false;
-        }
-        _cooldown.SetModifier(IsOverheating ? 1f : DelayMultiplier);
+        _attacker.Attack.Remove(_upgrade);
     }
 }

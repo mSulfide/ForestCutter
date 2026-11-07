@@ -26,6 +26,8 @@ MonoBehaviour:
     _count:
       _values:
       - _value: 1
-        _weight: 5
+        _weight: 20
       - _value: 2
+        _weight: 4
+      - _value: 0
         _weight: 1
