@@ -22,56 +22,56 @@ MonoBehaviour:
       Cost: 2
   - _items:
     - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
+      Cost: 3
+  - _items:
+    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
       Cost: 4
+  - _items:
+    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
+      Cost: 5
+  - _items:
+    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
+      Cost: 6
   - _items:
     - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
       Cost: 7
   - _items:
     - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
+      Cost: 8
+  - _items:
+    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
+      Cost: 9
+  - _items:
+    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
       Cost: 10
+  - _items:
+    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
+      Cost: 11
+  - _items:
+    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
+      Cost: 12
+  - _items:
+    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
+      Cost: 13
+  - _items:
+    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
+      Cost: 14
   - _items:
     - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
       Cost: 15
   - _items:
     - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
+      Cost: 16
+  - _items:
+    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
+      Cost: 17
+  - _items:
+    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
+      Cost: 18
+  - _items:
+    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
+      Cost: 19
+  - _items:
+    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
       Cost: 20
-  - _items:
-    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
-      Cost: 21
-  - _items:
-    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
-      Cost: 22
-  - _items:
-    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
-      Cost: 23
-  - _items:
-    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
-      Cost: 24
-  - _items:
-    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
-      Cost: 25
-  - _items:
-    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
-      Cost: 26
-  - _items:
-    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
-      Cost: 27
-  - _items:
-    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
-      Cost: 28
-  - _items:
-    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
-      Cost: 29
-  - _items:
-    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
-      Cost: 30
-  - _items:
-    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
-      Cost: 30
-  - _items:
-    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
-      Cost: 30
-  - _items:
-    - Item: {fileID: 11400000, guid: bbc40a7247eddaa4f96139e8895a891e, type: 2}
-      Cost: 30
   _message: "\u041A\u0440\u0438\u0442 +1"

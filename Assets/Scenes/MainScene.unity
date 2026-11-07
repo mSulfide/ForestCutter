@@ -779,7 +779,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
@@ -798,13 +798,13 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 913283514}
   - {fileID: 200262495}
   - {fileID: 342664318}
   - {fileID: 863123788}
   - {fileID: 910213394}
   - {fileID: 1610026217}
   - {fileID: 224240996}
-  - {fileID: 913283514}
   - {fileID: 1125223442}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3042,7 +3042,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e79865eccf275034abe590a1b189b3cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 1572923313}
   _maxRange: 1
   _maxDistance: 50
   _pickupSpeed: 13.35

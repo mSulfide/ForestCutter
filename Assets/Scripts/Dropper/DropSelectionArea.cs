@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class DropSelectionArea : MonoBehaviour
 {
-    [SerializeField] private Player _player;
     [SerializeField] private float _maxRange = 0f;
     [SerializeField] private float _maxDistance = 100f;
     [SerializeField] private float _pickupSpeed = 10f;
