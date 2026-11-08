@@ -67,6 +67,8 @@ public class Player : MonoBehaviour
 
         Context.Game.OnStartLoadScene += StartLoadSceneHandler;
         Context.Game.OnEndLoadScene += EndLoadSceneHandler;
+        Context.Game.OnStart += EndLoadSceneHandler;
+        Context.Game.OnStop += StartLoadSceneHandler;
     }
 
     private void OnDisable()
@@ -77,5 +79,7 @@ public class Player : MonoBehaviour
 
         Context.Game.OnStartLoadScene -= StartLoadSceneHandler;
         Context.Game.OnEndLoadScene -= EndLoadSceneHandler;
+        Context.Game.OnStart -= EndLoadSceneHandler;
+        Context.Game.OnStop -= StartLoadSceneHandler;
     }
 }
