@@ -26,22 +26,36 @@ MonoBehaviour:
   - _items:
     - Item: {fileID: 11400000, guid: 9b73be155f8e9d042a964dfd65c3f1b0, type: 2}
       Cost: 4
-  - _items:
-    - Item: {fileID: 11400000, guid: 9b73be155f8e9d042a964dfd65c3f1b0, type: 2}
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
       Cost: 5
   - _items:
     - Item: {fileID: 11400000, guid: 9b73be155f8e9d042a964dfd65c3f1b0, type: 2}
+      Cost: 5
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 10
+  - _items:
+    - Item: {fileID: 11400000, guid: 9b73be155f8e9d042a964dfd65c3f1b0, type: 2}
       Cost: 6
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 15
   - _items:
     - Item: {fileID: 11400000, guid: 9b73be155f8e9d042a964dfd65c3f1b0, type: 2}
       Cost: 7
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 20
   - _items:
     - Item: {fileID: 11400000, guid: 9b73be155f8e9d042a964dfd65c3f1b0, type: 2}
       Cost: 8
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 25
   - _items:
     - Item: {fileID: 11400000, guid: 9b73be155f8e9d042a964dfd65c3f1b0, type: 2}
       Cost: 9
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 30
   - _items:
     - Item: {fileID: 11400000, guid: 9b73be155f8e9d042a964dfd65c3f1b0, type: 2}
       Cost: 10
+    - Item: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+      Cost: 40
   _message: "\u0410\u0432\u0442\u043E\u0443\u0434\u0430\u0440 +1"
