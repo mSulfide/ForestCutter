@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +14,8 @@ public class Game : MonoBehaviour
 
     public event Action OnStart;
     public event Action OnStop;
+    public event Action OnStartLoadScene;
+    public event Action OnEndLoadScene;
 
     public void StartGame(string name, EGameLevel? startLevel = null)
     {
@@ -63,6 +66,36 @@ public class Game : MonoBehaviour
 
     public void LoadScene(EScene scene)
     {
-        SceneManager.LoadScene(scene.ToString());
+        StartCoroutine(LoadScene(scene.ToString()));
+    }
+
+    private IEnumerator LoadScene(string name)
+    {
+        Fader fader = GetComponentInChildren<Fader>();
+        if (fader == null)
+        {
+            OnStartLoadScene?.Invoke();
+            SceneManager.LoadScene(name);
+            OnEndLoadScene?.Invoke();
+        }
+        else
+        {
+            OnStartLoadScene?.Invoke();
+
+            bool waitFading = false;
+            fader.FadeIn(() => waitFading = true);
+
+            yield return new WaitUntil(() => waitFading);
+
+            SceneManager.LoadScene(name);
+
+            waitFading = false;
+            fader.FadeOut(() => waitFading = true);
+
+            yield return new WaitUntil(() => waitFading);
+
+            OnEndLoadScene?.Invoke();
+        }
+        yield break;
     }
 }
