@@ -75,7 +75,10 @@ public class Game : MonoBehaviour
         if (fader == null)
         {
             OnStartLoadScene?.Invoke();
-            SceneManager.LoadScene(name);
+
+            AsyncOperation loadScene = SceneManager.LoadSceneAsync(name);
+            yield return new WaitUntil(() => loadScene.isDone);
+
             OnEndLoadScene?.Invoke();
         }
         else
@@ -87,7 +90,8 @@ public class Game : MonoBehaviour
 
             yield return new WaitUntil(() => waitFading);
 
-            SceneManager.LoadScene(name);
+            AsyncOperation loadScene = SceneManager.LoadSceneAsync(name);
+            yield return new WaitUntil(() => loadScene.isDone);
 
             waitFading = false;
             fader.FadeOut(() => waitFading = true);
