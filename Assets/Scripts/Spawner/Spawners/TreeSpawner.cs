@@ -83,7 +83,9 @@ public class TreeSpawner : Spawner
             yield return new WaitForSeconds(_delay.GetValue());
             yield return new WaitUntil(() => _spawnCount < _maxSpawnCount.GetValue());
 
-            Spawn(null, _range);
+            GameObject tree = Spawn(null, _range);
+            if (tree.TryGetComponent(out Animator animator))
+                animator.Play("GrownUp");
         }
     }
 

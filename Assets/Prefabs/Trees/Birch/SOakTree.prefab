@@ -18,11 +18,11 @@ GameObject:
   - component: {fileID: 6845155870973070493}
   - component: {fileID: 431867130014197515}
   - component: {fileID: 8320714469483185199}
-  - component: {fileID: 7030306527815960591}
   - component: {fileID: 5709394385486998725}
   - component: {fileID: 4733245958403125973}
   - component: {fileID: 53527931968620104}
   - component: {fileID: -8192742155512592182}
+  - component: {fileID: 4194948716055707477}
   m_Layer: 0
   m_Name: SOakTree
   m_TagString: Untagged
@@ -230,51 +230,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7030306527815960591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4463695683563162702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6486af54e04a83840b2dc693a7624712, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _size:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0.5251458
-      outSlope: 0.5251458
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.094678864
-    - serializedVersion: 3
-      time: 0.8786041
-      value: 1.0190403
-      inSlope: 0.028082471
-      outSlope: 0.028082471
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.55305487
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0.030230926
-      outSlope: 0.030230926
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.15342945
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &5709394385486998725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,6 +282,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Armor
   _armor: 1.2
   _damageThreshold: 20
+--- !u!95 &4194948716055707477
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4463695683563162702}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 85822b9185703b44892b10d160454065, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7344636658783788818
 GameObject:
   m_ObjectHideFlags: 0

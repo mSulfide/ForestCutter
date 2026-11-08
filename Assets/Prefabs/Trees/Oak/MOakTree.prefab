@@ -99,8 +99,8 @@ GameObject:
   - component: {fileID: -7563421033289026654}
   - component: {fileID: 4013950975459708691}
   - component: {fileID: -8305131999088327100}
-  - component: {fileID: 2128347776918390937}
   - component: {fileID: -8476228518849735110}
+  - component: {fileID: 2169992524648691156}
   m_Layer: 0
   m_Name: MOakTree
   m_TagString: Untagged
@@ -308,51 +308,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2128347776918390937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7072537399471072765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6486af54e04a83840b2dc693a7624712, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _size:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0.5251458
-      outSlope: 0.5251458
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.094678864
-    - serializedVersion: 3
-      time: 0.8786041
-      value: 1.0190403
-      inSlope: 0.028082471
-      outSlope: 0.028082471
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.55305487
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0.030230926
-      outSlope: 0.030230926
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.15342945
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &-8476228518849735110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,7 +320,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d9306753f4c76647a270832c3d00311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StatAttackListener
-  _health: {fileID: 0}
+--- !u!95 &2169992524648691156
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7072537399471072765}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 85822b9185703b44892b10d160454065, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &737820162341827198
 PrefabInstance:
   m_ObjectHideFlags: 0

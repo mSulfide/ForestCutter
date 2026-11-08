@@ -90,7 +90,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3453443545045523272}
-  - component: {fileID: 3177278108682019264}
   - component: {fileID: -4549722303810579170}
   - component: {fileID: 6589622812516818101}
   - component: {fileID: 5496803870668028503}
@@ -102,6 +101,7 @@ GameObject:
   - component: {fileID: 6840282104672505806}
   - component: {fileID: 1980209759459129851}
   - component: {fileID: 8038913501701918268}
+  - component: {fileID: 2779581573306015480}
   m_Layer: 0
   m_Name: MSpruceTree
   m_TagString: Untagged
@@ -127,51 +127,6 @@ Transform:
   - {fileID: 6400738738281656959}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3177278108682019264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7648685729901784034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6486af54e04a83840b2dc693a7624712, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _size:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0.5251458
-      outSlope: 0.5251458
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.094678864
-    - serializedVersion: 3
-      time: 0.8786041
-      value: 1.0190403
-      inSlope: 0.028082471
-      outSlope: 0.028082471
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.55305487
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0.030230926
-      outSlope: 0.030230926
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.15342945
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &-4549722303810579170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,6 +335,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70da21d66567bd340a640f964ec2221d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2779581573306015480
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7648685729901784034}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 85822b9185703b44892b10d160454065, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &5050377690089610195
 PrefabInstance:
   m_ObjectHideFlags: 0
