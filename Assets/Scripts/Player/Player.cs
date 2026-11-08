@@ -49,19 +49,33 @@ public class Player : MonoBehaviour
         _mainCamera = Camera.main;
     }
 
-    private void OnEnable()
+    private void StartLoadSceneHandler()
+    {
+        _actions.Player.Disable();
+    }
+
+    private void EndLoadSceneHandler()
     {
         _actions.Player.Enable();
+    }
+
+    private void OnEnable()
+    {
         _actions.Player.Attack.performed += AttackHandler;
         _actions.Player.Attack.canceled += AttackHandler;
         _actions.Player.Point.performed += PointHandler;
+
+        Context.Game.OnStartLoadScene += StartLoadSceneHandler;
+        Context.Game.OnEndLoadScene += EndLoadSceneHandler;
     }
 
     private void OnDisable()
     {
-        _actions.Player.Disable();
         _actions.Player.Attack.performed -= AttackHandler;
         _actions.Player.Attack.canceled -= AttackHandler;
         _actions.Player.Point.performed -= PointHandler;
+
+        Context.Game.OnStartLoadScene -= StartLoadSceneHandler;
+        Context.Game.OnEndLoadScene -= EndLoadSceneHandler;
     }
 }
