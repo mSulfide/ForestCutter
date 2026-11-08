@@ -12,7 +12,11 @@ public class ShieldRecharge : MonoBehaviour
 
     public Shield Shield
     {
-        set => _shield = value;
+        set
+        {
+            _shield = value;
+            _image.fillAmount = 0f;
+        }
     }
 
     private void RechargeHandler(float time, Vector3 position)
