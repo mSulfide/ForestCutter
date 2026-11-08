@@ -10,10 +10,13 @@ public class Player : MonoBehaviour
     private InputSystem_Actions _actions;
     private Camera _mainCamera;
     private bool _canPickUp = true;
+    private Game _game;
 
     public Vector2 MousePosition { get; private set; }
 
     public Ray Pointer { get; private set; }
+
+    private Game Game => _game ??= Context.Exist() ? Context.Game : null;
 
     private void PointHandler(InputAction.CallbackContext context)
     {
@@ -65,10 +68,10 @@ public class Player : MonoBehaviour
         _actions.Player.Attack.canceled += AttackHandler;
         _actions.Player.Point.performed += PointHandler;
 
-        Context.Game.OnStartLoadScene += StartLoadSceneHandler;
-        Context.Game.OnEndLoadScene += EndLoadSceneHandler;
-        Context.Game.OnStart += EndLoadSceneHandler;
-        Context.Game.OnStop += StartLoadSceneHandler;
+        Game.OnStartLoadScene += StartLoadSceneHandler;
+        Game.OnEndLoadScene += EndLoadSceneHandler;
+        Game.OnStart += EndLoadSceneHandler;
+        Game.OnStop += StartLoadSceneHandler;
     }
 
     private void OnDisable()
@@ -77,9 +80,9 @@ public class Player : MonoBehaviour
         _actions.Player.Attack.canceled -= AttackHandler;
         _actions.Player.Point.performed -= PointHandler;
 
-        Context.Game.OnStartLoadScene -= StartLoadSceneHandler;
-        Context.Game.OnEndLoadScene -= EndLoadSceneHandler;
-        Context.Game.OnStart -= EndLoadSceneHandler;
-        Context.Game.OnStop -= StartLoadSceneHandler;
+        Game.OnStartLoadScene -= StartLoadSceneHandler;
+        Game.OnEndLoadScene -= EndLoadSceneHandler;
+        Game.OnStart -= EndLoadSceneHandler;
+        Game.OnStop -= StartLoadSceneHandler;
     }
 }
