@@ -10,15 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 585688b6f80c246458c3dffa7a79ecd2, type: 3}
-  m_Name: SBirchTree
+  m_Name: OakXLTree
   m_EditorClassIdentifier: Assembly-CSharp::TreeSettings
-  _prefab: {fileID: 4463695683563162702, guid: 3bdb994a47c7db84e99f57c6752f0227, type: 3}
-  _health: 100
-  _drop:
-  - _itemType: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
-    _count:
-      _values:
-      - _value: 1
-        _weight: 1
-      - _value: 2
-        _weight: 9
+  _prefab: {fileID: 1103733779434170157, guid: e88d9fdda39c64f478ae29599ac6a37c, type: 3}
+  _health: 3
+  _drop: []

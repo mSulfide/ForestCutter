@@ -87,10 +87,12 @@ public class IslandSaver : MonoBehaviour, ISaver, IPathHierarchy
             {
                 Vector3 position = new(treeData.X, treeData.Y, treeData.Z);
                 TreeSettings settings = Resources.Load<TreeSettings>(Path.Combine("Biomes", $"{Context.Game.State.Level}","Trees", treeData.Name));
+
+                if (settings == null)
+                    continue;
+
                 GameObject tree = spawner.Spawn(settings, position);
-
                 tree.GetComponent<Health>().SetMax(treeData.Health);
-
                 tree.GetComponent<Inventory>().SetData(treeData.Inventory);
             }
     }

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 585688b6f80c246458c3dffa7a79ecd2, type: 3}
-  m_Name: SmallTree
+  m_Name: OakSTree
   m_EditorClassIdentifier: 
   _prefab: {fileID: 7072537399471072765, guid: 649142af2e27ae940842939c0ce72938, type: 3}
   _health: 35
