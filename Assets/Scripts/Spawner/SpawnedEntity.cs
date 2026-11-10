@@ -11,7 +11,7 @@ public class SpawnedEntity : MonoBehaviour
         _onDestroy = onDestroy;
     }
 
-    public void Realise()
+    public void Release()
     {
         if (_released)
             return;
@@ -22,6 +22,6 @@ public class SpawnedEntity : MonoBehaviour
 
     private void OnDestroy()
     {
-        Realise();
+        Release();
     }
 }

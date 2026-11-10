@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: OakXLTree
   m_EditorClassIdentifier: Assembly-CSharp::TreeSettings
   _prefab: {fileID: 1103733779434170157, guid: e88d9fdda39c64f478ae29599ac6a37c, type: 3}
-  _health: 3
+  _health: 3000
   _drop: []

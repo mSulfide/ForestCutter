@@ -25,6 +25,7 @@ public class TreeSpawner : Spawner
     public Upgradable<RandomValue<TreeSettings>> TreePool => _treePool;
 
     public event Action<GameObject> OnSpawn;
+    public event Action<GameObject> OnDespawn;
 
     public GameObject Spawn(TreeSettings settings)
     {
@@ -37,6 +38,8 @@ public class TreeSpawner : Spawner
             {
                 _trees.Remove(tree);
                 _spawnCount--;
+
+                OnDespawn?.Invoke(tree);
             });
         _trees.Add(tree);
         _spawnCount++;

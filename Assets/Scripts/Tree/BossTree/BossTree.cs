@@ -10,7 +10,7 @@ public class BossTree : MonoBehaviour
     [SerializeField] private Vector3 _position;
     [SerializeField, Min(0f)] private float _lifeTime = 10f;
 
-    private Health bossTree;
+    private Health _bossTree;
 
     private IEnumerator LifeTimeActivate()
     {
@@ -30,7 +30,7 @@ public class BossTree : MonoBehaviour
 
     private void Awake()
     {
-        bossTree = GetComponent<Health>();
+        _bossTree = GetComponent<Health>();
     }
 
     private void Start()
@@ -39,7 +39,7 @@ public class BossTree : MonoBehaviour
 
         if (TryGetComponent(out OccupyingArea area))
         {
-            foreach (Health tree in Physics.OverlapSphere(_position, area.Range).Where(collider => collider.TryGetComponent(out Health tree) && tree != bossTree).Select(collider => collider.GetComponent<Health>()))
+            foreach (Health tree in Physics.OverlapSphere(_position, area.Range).Where(collider => collider.TryGetComponent(out Health tree) && tree != _bossTree).Select(collider => collider.GetComponent<Health>()))
             {
                 Vector3 point = tree.transform.position + (_position - tree.transform.position).normalized * (tree.TryGetComponent(out CapsuleCollider collider) ? collider.radius : 0);
 
