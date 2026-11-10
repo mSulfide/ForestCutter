@@ -32,11 +32,12 @@ public class TreeSpawner : Spawner
 
         tree.transform.parent = transform;
 
-        tree.GetComponent<Health>().OnPointsOver += () =>
-        {
-            _trees.Remove(tree);
-            _spawnCount--;
-        };
+        if (tree.TryGetComponent(out SpawnedEntity entity))
+            entity.Initialize(() =>
+            {
+                _trees.Remove(tree);
+                _spawnCount--;
+            });
         _trees.Add(tree);
         _spawnCount++;
 

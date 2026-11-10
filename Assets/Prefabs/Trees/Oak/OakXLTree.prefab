@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4874646060618190137}
+  - component: {fileID: -4172435499221919213}
   - component: {fileID: 7292366092233199447}
   - component: {fileID: 8195302008939956874}
   - component: {fileID: 6170149519624136920}
@@ -19,6 +20,7 @@ GameObject:
   - component: {fileID: 5184371131037976952}
   - component: {fileID: 2558269944545056207}
   - component: {fileID: 557253757854158353}
+  - component: {fileID: 1857890830299083193}
   m_Layer: 0
   m_Name: OakXLTree
   m_TagString: Untagged
@@ -37,13 +39,27 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7104478280176132510}
   - {fileID: 360639565067125383}
   - {fileID: 5000488304175551670}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4172435499221919213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103733779434170157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 735ed20caf1dfa74b88d286c34600fde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossTree
+  _position: {x: 0, y: 0, z: 2.8}
+  _lifeTime: 10
 --- !u!114 &7292366092233199447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026bde8beab4c5f4fb720deb2b8642d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _range: 1.25
+  _range: 3.5
 --- !u!136 &7944508565618672793
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -215,6 +231,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1857890830299083193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103733779434170157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841ceb2c6afb17f48b59added562f518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnedEntity
 --- !u!1 &1682544966218290305
 GameObject:
   m_ObjectHideFlags: 0

@@ -3363,6 +3363,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfaa13713c317e84eb63b3ced0b62340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MyDebug
+  _boss: {fileID: 11400000, guid: 9db32683eb678a249a31dc92b2efd0cc, type: 2}
+  _spawner: {fileID: 814901217}
 --- !u!1 &1610026216
 GameObject:
   m_ObjectHideFlags: 0

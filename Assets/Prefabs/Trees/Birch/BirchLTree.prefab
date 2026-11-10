@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 4269236635124174252}
   - component: {fileID: 7280358738585142662}
   - component: {fileID: -5990720878759120627}
+  - component: {fileID: -1117822385017082641}
   m_Layer: 0
   m_Name: BirchLTree
   m_TagString: Untagged
@@ -304,6 +305,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-1117822385017082641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8059612314347504438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841ceb2c6afb17f48b59added562f518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnedEntity
 --- !u!1 &8406790651919035476
 GameObject:
   m_ObjectHideFlags: 0
