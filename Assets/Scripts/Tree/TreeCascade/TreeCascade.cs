@@ -73,12 +73,12 @@ public class TreeCascade : MonoBehaviour
     private void OnEnable()
     {
         _tree.OnAttacked += AttackHandler;
-        _tree.OnPointsOver += DeathHandler;
+        _tree.OnDied += DeathHandler;
     }
 
     private void OnDisable()
     {
         _tree.OnAttacked -= AttackHandler;
-        _tree.OnPointsOver -= DeathHandler;
+        _tree.OnDied -= DeathHandler;
     }
 }

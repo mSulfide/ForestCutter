@@ -25,11 +25,11 @@ public class DeathEffect : MonoBehaviour
 
     private void OnEnable()
     {
-        _health.OnPointsOver += DeathHandler;
+        _health.OnDied += DeathHandler;
     }
 
     private void OnDisable()
     {
-        _health.OnPointsOver -= DeathHandler;
+        _health.OnDied -= DeathHandler;
     }
 }

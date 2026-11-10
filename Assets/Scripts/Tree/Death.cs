@@ -62,12 +62,12 @@ public class Death : MonoBehaviour
     private void OnEnable()
     {
         _health.OnAttacked += AttackHandler;
-        _health.OnPointsOver += DeathHandler;
+        _health.OnDied += DeathHandler;
     }
 
     private void OnDisable()
     {
         _health.OnAttacked -= AttackHandler;
-        _health.OnPointsOver -= DeathHandler;
+        _health.OnDied -= DeathHandler;
     }
 }

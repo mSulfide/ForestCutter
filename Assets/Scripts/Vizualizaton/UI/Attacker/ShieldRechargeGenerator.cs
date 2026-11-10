@@ -20,7 +20,7 @@ public class ShieldRechargeGenerator : MonoBehaviour
 
             if (tree.TryGetComponent(out Health health))
             {
-                health.OnPointsOver += () =>
+                health.OnDied += () =>
                 {
                     recharge.gameObject.SetActive(false);
                     _unbusyIndicators.Enqueue(recharge);

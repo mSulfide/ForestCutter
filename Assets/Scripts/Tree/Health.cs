@@ -3,12 +3,14 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    public delegate void PointsChangeAction(int current, int max);
+
     public int Current { get; private set; }
     public int Max { get; private set; }
 
     public event Attacker.AttackAction OnAttacked;
-    public event Action<int> OnChanged;
-    public event Action OnPointsOver;
+    public event PointsChangeAction OnChanged;
+    public event Action OnDied;
     public event Action OnRevive;
 
     public virtual void TakeAttack(AttackInfo info)
@@ -23,7 +25,7 @@ public class Health : MonoBehaviour
             return;
 
         Current = Math.Min(Current + amount, Max);
-        OnChanged?.Invoke(Current);
+        OnChanged?.Invoke(Current, Max);
     }
 
     public void TakeDamage(int damage)
@@ -33,9 +35,9 @@ public class Health : MonoBehaviour
 
         Current = Math.Max(Current - damage, 0);
 
-        OnChanged?.Invoke(Current);
+        OnChanged?.Invoke(Current, Max);
         if (Current == 0)
-            OnPointsOver?.Invoke();
+            OnDied?.Invoke();
     }
 
     public void SetMax(int newMax, bool fillToMax = false)
@@ -44,7 +46,7 @@ public class Health : MonoBehaviour
         if (IsAlive)
         {
             Current = fillToMax ? Max : Math.Min(Current, Max);
-            OnChanged?.Invoke(Current);
+            OnChanged?.Invoke(Current, Max);
         }
         else if (fillToMax)
         {
@@ -57,7 +59,7 @@ public class Health : MonoBehaviour
         if (IsAlive)
             return;
         Current = Math.Clamp(healthPoints, 1, Max);
-        OnChanged?.Invoke(Current);
+        OnChanged?.Invoke(Current, Max);
         OnRevive?.Invoke();
     }
 
