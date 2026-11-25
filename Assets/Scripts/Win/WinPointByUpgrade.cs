@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class WinPointByUpgrade : MonoBehaviour
@@ -9,6 +10,8 @@ public class WinPointByUpgrade : MonoBehaviour
 
     private void LevelUpHandler(int level)
     {
+        if (_upgrader?.UpgradeList == null)
+            throw new ArgumentNullException(nameof(_upgrader), "UpgradeList does not exist");
         if (level == _level)
             _victory.AddPoint(_upgrader.UpgradeList.name);
     }

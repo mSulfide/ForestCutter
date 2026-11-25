@@ -32,15 +32,16 @@ public abstract class Upgrader<T, TUpgradeList> : Upgrader where TUpgradeList : 
 {
     private UpgradeList<T> _upgrades;
 
-    private UpgradeList<T> Upgrades => _upgrades ??= Context.Game.Storage.GetUpgradeList<TUpgradeList>() ?? throw new InvalidOperationException($"{nameof(_upgrades)} can't be null");
+    private UpgradeList<T> Upgrades => _upgrades ??= Context.Game.Storage.GetUpgradeList<TUpgradeList>();
 
     public override UpgradeList UpgradeList => Upgrades;
-    
+
     public override int MaxLevel => Upgrades.Count - 1;
 
     public sealed override void InvokeUpgrade(int level)
     {
-        Invoke(Upgrades[Mathf.Clamp(level, 0, Upgrades.Count - 1)]);
+        if (Upgrades != null)
+            Invoke(Upgrades[Mathf.Clamp(level, 0, Upgrades.Count - 1)]);
     }
 
     public abstract void Invoke(T upgrade);

@@ -108,6 +108,11 @@ public class TreeSpawner : Spawner
     private void SetBiome()
     {
         TreeSpawnerSettings settings = Context.Game.Storage.GetResource<TreeSpawnerSettings>();
+        if (settings == null)
+        {
+            enabled = false;
+            return;
+        }
 
         _treePool.BaseValue = settings.TreePool;
         _maxSpawnCount.BaseValue = settings.MaxSpawnCount;

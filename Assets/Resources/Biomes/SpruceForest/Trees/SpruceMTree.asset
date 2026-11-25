@@ -14,39 +14,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: 7648685729901784034, guid: 2a52296d3a30379469fec1874db77c39, type: 3}
   _health: 150
-  _drop:
-  - _itemType: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
-    _count:
-      _values:
-      - _value: 3
-        _weight: 6
-      - _value: 4
-        _weight: 4
-  - _itemType: {fileID: 11400000, guid: 408d006c38edea344b42839c8137496d, type: 2}
-    _count:
-      _values:
-      - _value: 0
-        _weight: 3
-      - _value: 1
-        _weight: 12
-      - _value: 2
-        _weight: 6
-      - _value: 3
-        _weight: 1
-  - _itemType: {fileID: 11400000, guid: 39c18f9ba04821e4bba12913cb5dcc2b, type: 2}
-    _count:
-      _values:
-      - _value: 0
-        _weight: 6
-      - _value: 1
-        _weight: 1
   _modules:
-  - rid: 6892205642887201046
+  - rid: 6892205647556509797
   references:
     version: 2
     RefIds:
-    - rid: 6892205642887201046
-      type: {class: ArmorModule, ns: , asm: Assembly-CSharp}
+    - rid: 6892205647556509797
+      type: {class: RandomDropModule, ns: , asm: Assembly-CSharp}
       data:
-        _armor: 0.92
-        _damageThreshold: 65
+        _drops:
+        - _itemType: {fileID: 11400000, guid: c4132a4830e15cd4ba728ea5583c8aa1, type: 2}
+          _count:
+            _values:
+            - _value: 3
+              _weight: 6
+            - _value: 4
+              _weight: 4
+        - _itemType: {fileID: 11400000, guid: 408d006c38edea344b42839c8137496d, type: 2}
+          _count:
+            _values:
+            - _value: 0
+              _weight: 3
+            - _value: 1
+              _weight: 12
+            - _value: 2
+              _weight: 6
+            - _value: 3
+              _weight: 1
+        - _itemType: {fileID: 11400000, guid: 39c18f9ba04821e4bba12913cb5dcc2b, type: 2}
+          _count:
+            _values:
+            - _value: 0
+              _weight: 6
+            - _value: 1
+              _weight: 1

@@ -15,10 +15,11 @@ public class UpgraderSaver : MonoBehaviour, ISaver, IPathHierarchy
 
         Dictionary<string, int> data = _cash != null ? new(_cash) : new();
         foreach (Upgrader upgrader in _upgraders)
-            if (data.ContainsKey(upgrader.UpgradeList.name))
-                data[upgrader.UpgradeList.name] = upgrader.Level;
-            else
-                data.Add(upgrader.UpgradeList.name, upgrader.Level);
+            if (upgrader?.UpgradeList != null)
+                if (data.ContainsKey(upgrader.UpgradeList.name))
+                    data[upgrader.UpgradeList.name] = upgrader.Level;
+                else
+                    data.Add(upgrader.UpgradeList.name, upgrader.Level);
 
         Context.Storage.Save(provider.GetPath(), data);
     }
@@ -30,7 +31,7 @@ public class UpgraderSaver : MonoBehaviour, ISaver, IPathHierarchy
         Dictionary<string, int> data = Context.Storage.Load<Dictionary<string, int>>(provider.GetPath());
         if (data != null)
             foreach (var upgrade in data)
-                _upgraders.Find(lot => lot.UpgradeList.name == upgrade.Key)?.SetLevel(upgrade.Value);
+                _upgraders.Find(lot => lot.UpgradeList?.name == upgrade.Key)?.SetLevel(upgrade.Value);
 
         _cash = data;
     }

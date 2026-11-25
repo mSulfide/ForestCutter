@@ -14,25 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TreeSettings
   _prefab: {fileID: 8142780355691205476, guid: c43346ffc72b9444db012949c90765dd, type: 3}
   _health: 300
-  _drop:
-  - _itemType: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
-    _count:
-      _values:
-      - _value: 2
-        _weight: 2
-      - _value: 3
-        _weight: 9
-      - _value: 4
-        _weight: 5
-  - _itemType: {fileID: 11400000, guid: 9b73be155f8e9d042a964dfd65c3f1b0, type: 2}
-    _count:
-      _values:
-      - _value: 0
-        _weight: 4
-      - _value: 1
-        _weight: 1
   _modules:
   - rid: 6892205642887201049
+  - rid: 6892205647556509770
+  - rid: 6892205647556509782
+  - rid: 6892205647556509790
   references:
     version: 2
     RefIds:
@@ -41,3 +27,31 @@ MonoBehaviour:
       data:
         _armor: 1.35
         _damageThreshold: 30
+    - rid: 6892205647556509770
+      type: {class: ShieldModule, ns: , asm: Assembly-CSharp}
+      data:
+        _reacharge: 0.95
+    - rid: 6892205647556509782
+      type: {class: ViscosityModule, ns: , asm: Assembly-CSharp}
+      data:
+        _cooldownModifire: 2
+    - rid: 6892205647556509790
+      type: {class: RandomDropModule, ns: , asm: Assembly-CSharp}
+      data:
+        _drops:
+        - _itemType: {fileID: 11400000, guid: 1f79ddb2460043145bacb9effbbc0825, type: 2}
+          _count:
+            _values:
+            - _value: 2
+              _weight: 2
+            - _value: 3
+              _weight: 9
+            - _value: 4
+              _weight: 5
+        - _itemType: {fileID: 11400000, guid: 9b73be155f8e9d042a964dfd65c3f1b0, type: 2}
+          _count:
+            _values:
+            - _value: 0
+              _weight: 4
+            - _value: 1
+              _weight: 1
