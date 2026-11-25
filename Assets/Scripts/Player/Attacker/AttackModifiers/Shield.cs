@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour, IAttackModifire
 {
-    [SerializeField] private float _recharge = 1f;
+    private float _recharge = 0f;
 
     private float _time = 0f;
 
@@ -26,6 +26,11 @@ public class Shield : MonoBehaviour, IAttackModifire
         OnRecharge?.Invoke(_recharge, info.Position);
 
         return info;
+    }
+
+    public void SetRecharge(float recharge)
+    {
+        _recharge = Mathf.Max(0f, recharge);
     }
 
     private IEnumerator RechargeShield()

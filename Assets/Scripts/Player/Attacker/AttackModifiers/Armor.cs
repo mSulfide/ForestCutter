@@ -2,8 +2,18 @@
 
 public class Armor : MonoBehaviour, IAttackModifire
 {
-    [SerializeField, Min(0f)] private float _armor = 0f;
-    [SerializeField] private int _damageThreshold = 0;
+    private float _armor = 0f;
+    private int _damageThreshold = 0;
+
+    public void SetArmor(float armor)
+    {
+        _armor = Mathf.Max(0f, armor);
+    }
+
+    public void SetDamageThreshold(int damageThreshold)
+    {
+        _damageThreshold = damageThreshold;
+    }
 
     public AttackInfo Modificate(AttackInfo info)
     {

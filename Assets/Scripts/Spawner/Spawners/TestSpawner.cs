@@ -38,11 +38,11 @@ public class TestSpawner : TreeSpawner
             if (health.IsAlive)
                 continue;
 
-            foreach (var drop in tree.Drop)
+            /*foreach (var drop in tree.Drop)
                 if (inventory.ContainsKey(drop.ItemType))
                     inventory[drop.ItemType] += drop.Count;
                 else
-                    inventory.Add(drop.ItemType, drop.Count);
+                    inventory.Add(drop.ItemType, drop.Count);*/
 
             totalDamage += (uint)tree.Health;
         }

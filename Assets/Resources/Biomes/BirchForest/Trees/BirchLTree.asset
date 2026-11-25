@@ -31,3 +31,13 @@ MonoBehaviour:
         _weight: 4
       - _value: 0
         _weight: 1
+  _modules:
+  - rid: 6892205642887201048
+  references:
+    version: 2
+    RefIds:
+    - rid: 6892205642887201048
+      type: {class: ArmorModule, ns: , asm: Assembly-CSharp}
+      data:
+        _armor: 1.6
+        _damageThreshold: 40

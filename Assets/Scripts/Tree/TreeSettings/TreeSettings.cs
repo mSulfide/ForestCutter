@@ -6,9 +6,18 @@ public class TreeSettings : ScriptableObject
 {
     [SerializeField] private GameObject _prefab;
     [SerializeField] private int _health = 3;
-    [SerializeField] private List<RandomDrop> _drop = new();
+    [SerializeReference, SubclassSelector] private List<ITreeModule> _modules = new();
+
 
     public GameObject Prefab => _prefab;
     public int Health => _health;
-    public IEnumerable<RandomDrop> Drop => _drop;
+    public IEnumerable<ITreeModule> Modules => _modules;
+
+    public T GetModule<T>() where T : class, ITreeModule
+    {
+        foreach (ITreeModule module in _modules)
+            if (module is T result)
+                return result;
+        return null;
+    }
 }

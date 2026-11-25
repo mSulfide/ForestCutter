@@ -22,3 +22,7 @@ MonoBehaviour:
         _weight: 1
       - _value: 2
         _weight: 9
+  _modules: []
+  references:
+    version: 2
+    RefIds: []

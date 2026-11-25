@@ -9,7 +9,6 @@ public class TreeSpawner : Spawner
     [SerializeField, Min(1f)] private float _range = 1f;
 
     private readonly List<GameObject> _trees = new();
-    private readonly TreeGenerator _generator = new();
     private Coroutine _spawning;
     private int _spawnCount = 0;
 
@@ -29,7 +28,7 @@ public class TreeSpawner : Spawner
 
     public GameObject Spawn(TreeSettings settings)
     {
-        GameObject tree = _generator.Spawn(settings != null ? settings : _treePool.GetValue());
+        GameObject tree = CreateTree(settings != null ? settings : _treePool.GetValue());
 
         tree.transform.parent = transform;
 
@@ -62,13 +61,48 @@ public class TreeSpawner : Spawner
     {
         GameObject tree = Spawn(settings);
 
+        float areaRange = tree.TryGetComponent(out OccupyingArea area) ? area.Range : 0f;
         Vector3 position = GetClearPosition(
-                () => Rand.GetPosition(range) + transform.position,
-                tree.TryGetComponent(out OccupyingArea area) ? area.Range : 0f
+                () => Rand.GetPosition(range - areaRange) + transform.position,
+                areaRange
             );
         tree.transform.position = Ground.GetPosition(position) ?? position;
 
         return tree;
+    }
+
+    private GameObject CreateTree(TreeSettings settings)
+    {
+        GameObject original = Instantiate(settings.Prefab);
+        original.name = settings.name;
+
+        Health health = original.TryGetComponent(out Health currentHealth) ? currentHealth : original.AddComponent<Health>();
+        health.SetMax(settings.Health, true);
+
+        foreach (ITreeModule module in settings.Modules)
+            switch (module)
+            {
+                case RandomDropModule dropModule:
+                    Inventory inventory = original.TryGetComponent(out Inventory currentInventory) ? currentInventory : original.AddComponent<Inventory>();
+                    foreach (var item in dropModule.Drop)
+                        inventory.Add(item.ItemType, item.Count);
+                    break;
+                case ArmorModule armorModule:
+                    Armor armor = original.TryGetComponent(out Armor currentArmor) ? currentArmor : original.AddComponent<Armor>();
+                    armor.SetArmor(armorModule.Armor);
+                    armor.SetDamageThreshold(armorModule.DamageThreshold);
+                    break;
+                case ShieldModule shieldModule:
+                    Shield shield = original.TryGetComponent(out Shield currentShield) ? currentShield : original.AddComponent<Shield>();
+                    shield.SetRecharge(shieldModule.Recharge);
+                    break;
+                case ViscosityModule viscosityModule:
+                    Viscosity viscosity = original.TryGetComponent(out Viscosity currentViscosity) ? currentViscosity : original.AddComponent<Viscosity>();
+                    viscosity.SetCooldownModifire(viscosityModule.CooldownModifire);
+                    break;
+            }
+
+        return original;
     }
 
     private void SetBiome()

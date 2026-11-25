@@ -2,7 +2,12 @@
 
 public class Viscosity : MonoBehaviour, IAttackModifire
 {
-    [SerializeField, Min(0f)] private float _cooldownModifire = 0f;
+    private float _cooldownModifire = 0f;
+
+    public void SetCooldownModifire(float modifire)
+    {
+        _cooldownModifire = Mathf.Max(0f, modifire);
+    }
 
     public AttackInfo Modificate(AttackInfo info)
     {
